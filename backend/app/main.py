@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 
+from app.api.v1.router import api_router
+
 app = FastAPI(
     title="Krushiphal (AgriLink) API",
     version="0.1.0",
@@ -12,6 +14,4 @@ def root():
     return {"message": "Welcome to Krushiphal API"}
 
 
-@app.get("/health", tags=["Health"])
-def health_check():
-    return {"status": "ok", "service": "krushiphal-backend"}
+app.include_router(api_router, prefix="/api/v1")
