@@ -1,0 +1,76 @@
+.otp-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f8f3;
+  padding: 20px;
+}
+
+.otp-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.otp-icon {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.otp-card h1 {
+  margin: 0;
+  color: #2e7d32;
+}
+
+.otp-description {
+  color: #777;
+  line-height: 1.5;
+  margin: 12px 0 25px;
+}
+
+.otp-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 8px;
+  margin-bottom: 18px;
+}
+
+.verify-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #2e7d32;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.verify-btn:hover {
+  background: #256628;
+}
+
+.resend-text {
+  margin-top: 22px;
+  color: #777;
+}
+
+.resend-btn {
+  border: none;
+  background: none;
+  color: #2e7d32;
+  font-weight: 600;
+  cursor: pointer;
+}
