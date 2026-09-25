@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     API_V1_PREFIX: str = "/api/v1"
     ENVIRONMENT: str = "development"
     DEBUG: bool = True
+    DATABASE_URL: str = "sqlite:///./krushiphal.db"
 
     model_config = SettingsConfigDict(
         env_file=".env",
