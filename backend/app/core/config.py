@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+
 class Settings(BaseSettings):
     PROJECT_NAME: str = "Krushiphal (AgriLink) API"
     VERSION: str = "0.1.0"
@@ -7,7 +8,15 @@ class Settings(BaseSettings):
     API_V1_PREFIX: str = "/api/v1"
     ENVIRONMENT: str = "development"
     DEBUG: bool = True
+
     DATABASE_URL: str = "sqlite:///./krushiphal.db"
+
+    SECRET_KEY: str = "change-this-development-secret-key"
+    ALGORITHM: str = "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
+
+    # ML Prediction API
+    ML_API_URL: str = "http://127.0.0.1:8001"
 
     model_config = SettingsConfigDict(
         env_file=".env",
