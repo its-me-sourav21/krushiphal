@@ -3,93 +3,131 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f4f8f3;
-  padding: 20px;
+  padding: 24px;
+  background: linear-gradient(135deg, #f3f8f1 0%, #e8f2e5 100%);
+  font-family: Arial, sans-serif;
 }
 
 .login-card {
   width: 100%;
-  max-width: 420px;
-  background: white;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  max-width: 430px;
+  background: #ffffff;
+  padding: 42px 40px;
+  border-radius: 20px;
+  border: 1px solid #e4eee1;
+  box-shadow: 0 15px 45px rgba(46, 125, 50, 0.12);
 }
 
 .logo-section {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 
 .logo {
-  font-size: 50px;
-  margin-bottom: 8px;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8f5e9;
+  border-radius: 20px;
+  font-size: 38px;
 }
 
 .logo-section h1 {
   margin: 0;
-  font-size: 32px;
-  color: #2e7d32;
+  color: #246b2a;
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .logo-section p {
-  margin-top: 8px;
-  color: #777;
+  margin: 8px 0 0;
+  color: #718071;
   font-size: 14px;
 }
 
 form label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 9px;
+  color: #263326;
+  font-size: 14px;
   font-weight: 600;
-  color: #333;
 }
 
 .mobile-input {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  height: 52px;
+  margin-bottom: 20px;
+  border: 1px solid #d5dfd3;
+  border-radius: 10px;
+  background: #ffffff;
   overflow: hidden;
-  margin-bottom: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.mobile-input:focus-within {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
 }
 
 .mobile-input span {
-  padding: 12px;
-  background: #f5f5f5;
-  color: #555;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  background: #f5f8f4;
+  color: #4d5b4d;
+  font-size: 15px;
+  font-weight: 600;
+  border-right: 1px solid #e0e6df;
 }
 
 .mobile-input input {
   flex: 1;
+  width: 100%;
+  height: 100%;
+  padding: 0 14px;
   border: none;
   outline: none;
-  padding: 12px;
+  background: transparent;
+  color: #263326;
   font-size: 15px;
+}
+
+.mobile-input input::placeholder {
+  color: #9aa49a;
 }
 
 .primary-btn {
   width: 100%;
-  padding: 13px;
+  height: 52px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #2e7d32;
-  color: white;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .primary-btn:hover {
-  background: #256628;
+  background: #256b2a;
+}
+
+.primary-btn:active {
+  transform: scale(0.99);
 }
 
 .divider {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 25px 0;
-  color: #999;
+  gap: 12px;
+  margin: 28px 0 22px;
+  color: #9aa49a;
 }
 
 .divider::before,
@@ -97,31 +135,53 @@ form label {
   content: "";
   flex: 1;
   height: 1px;
-  background: #ddd;
+  background: #e2e7e1;
 }
 
 .divider span {
   font-size: 12px;
-}
-
-.account-text {
-  text-align: center;
-  color: #666;
-  margin-bottom: 12px;
-}
-
-.create-account-btn {
-  display: block;
-  width: 100%;
-  text-align: center;
-  padding: 12px;
-  border: 1px solid #2e7d32;
-  border-radius: 8px;
-  color: #2e7d32;
-  text-decoration: none;
   font-weight: 600;
 }
 
+.account-text {
+  margin: 0 0 12px;
+  text-align: center;
+  color: #6f786f;
+  font-size: 14px;
+}
+
+.create-account-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #2e7d32;
+  border-radius: 10px;
+  color: #2e7d32;
+  background: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
 .create-account-btn:hover {
-  background: #f1f8f1;
+  background: #2e7d32;
+  color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    padding: 16px;
+  }
+
+  .login-card {
+    padding: 32px 24px;
+    border-radius: 16px;
+  }
+
+  .logo-section h1 {
+    font-size: 27px;
+  }
 }
