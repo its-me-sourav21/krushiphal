@@ -1,7 +1,45 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import "./Profile.css";
 
 function Profile() {
+  const [isEditing, setIsEditing] = useState(false);
+
+  const [profileData, setProfileData] = useState({
+    fullName: "Ramesh Kumar",
+    mobile: "+91 98765 43210",
+    email: "ramesh.kumar@example.com",
+    state: "Chhattisgarh",
+    district: "Raipur",
+    city: "Raipur",
+  });
+
+  const [editData, setEditData] = useState(profileData);
+
+  const handleEdit = () => {
+    setEditData(profileData);
+    setIsEditing(true);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setEditData((previous) => ({
+      ...previous,
+      [name]: value,
+    }));
+  };
+
+  const handleSave = () => {
+    setProfileData(editData);
+    setIsEditing(false);
+  };
+
+  const handleCancel = () => {
+    setEditData(profileData);
+    setIsEditing(false);
+  };
+
   return (
     <div className="profile-page">
 
@@ -127,17 +165,17 @@ function Profile() {
         <section className="profile-hero-card">
 
           <div className="profile-avatar">
-            R
+            {profileData.fullName.charAt(0)}
           </div>
 
           <div className="profile-hero-info">
 
             <h2>
-              Ramesh Kumar
+              {profileData.fullName}
             </h2>
 
             <p>
-              Farmer • Raipur, Chhattisgarh
+              Farmer • {profileData.district}, {profileData.state}
             </p>
 
             <span className="profile-status">
@@ -146,12 +184,35 @@ function Profile() {
 
           </div>
 
-          <button
-            type="button"
-            className="profile-edit-btn"
-          >
-            ✎ Edit Profile
-          </button>
+          {!isEditing ? (
+            <button
+              type="button"
+              className="profile-edit-btn"
+              onClick={handleEdit}
+            >
+              ✎ Edit Profile
+            </button>
+          ) : (
+            <div className="profile-edit-actions">
+
+              <button
+                type="button"
+                className="profile-cancel-btn"
+                onClick={handleCancel}
+              >
+                Cancel
+              </button>
+
+              <button
+                type="button"
+                className="profile-save-btn"
+                onClick={handleSave}
+              >
+                ✓ Save Changes
+              </button>
+
+            </div>
+          )}
 
         </section>
 
@@ -159,7 +220,6 @@ function Profile() {
         {/* ================= CONTENT ================= */}
 
         <div className="profile-content-grid">
-
 
           {/* PERSONAL DETAILS */}
 
@@ -183,33 +243,128 @@ function Profile() {
             <div className="profile-details-grid">
 
               <div className="profile-detail-item">
+
                 <span>Full Name</span>
-                <strong>Ramesh Kumar</strong>
+
+                {isEditing ? (
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={editData.fullName}
+                    onChange={handleChange}
+                    className="profile-edit-input"
+                  />
+                ) : (
+                  <strong>
+                    {profileData.fullName}
+                  </strong>
+                )}
+
               </div>
 
+
               <div className="profile-detail-item">
+
                 <span>Mobile Number</span>
-                <strong>+91 98765 43210</strong>
+
+                {isEditing ? (
+                  <input
+                    type="tel"
+                    name="mobile"
+                    value={editData.mobile}
+                    onChange={handleChange}
+                    className="profile-edit-input"
+                  />
+                ) : (
+                  <strong>
+                    {profileData.mobile}
+                  </strong>
+                )}
+
               </div>
 
+
               <div className="profile-detail-item">
+
                 <span>Email Address</span>
-                <strong>ramesh.kumar@example.com</strong>
+
+                {isEditing ? (
+                  <input
+                    type="email"
+                    name="email"
+                    value={editData.email}
+                    onChange={handleChange}
+                    className="profile-edit-input"
+                  />
+                ) : (
+                  <strong>
+                    {profileData.email}
+                  </strong>
+                )}
+
               </div>
 
+
               <div className="profile-detail-item">
+
                 <span>State</span>
-                <strong>Chhattisgarh</strong>
+
+                {isEditing ? (
+                  <input
+                    type="text"
+                    name="state"
+                    value={editData.state}
+                    onChange={handleChange}
+                    className="profile-edit-input"
+                  />
+                ) : (
+                  <strong>
+                    {profileData.state}
+                  </strong>
+                )}
+
               </div>
 
+
               <div className="profile-detail-item">
+
                 <span>District</span>
-                <strong>Raipur</strong>
+
+                {isEditing ? (
+                  <input
+                    type="text"
+                    name="district"
+                    value={editData.district}
+                    onChange={handleChange}
+                    className="profile-edit-input"
+                  />
+                ) : (
+                  <strong>
+                    {profileData.district}
+                  </strong>
+                )}
+
               </div>
 
+
               <div className="profile-detail-item">
+
                 <span>Village / City</span>
-                <strong>Raipur</strong>
+
+                {isEditing ? (
+                  <input
+                    type="text"
+                    name="city"
+                    value={editData.city}
+                    onChange={handleChange}
+                    className="profile-edit-input"
+                  />
+                ) : (
+                  <strong>
+                    {profileData.city}
+                  </strong>
+                )}
+
               </div>
 
             </div>
@@ -254,7 +409,7 @@ function Profile() {
 
               <div className="profile-farm-stat">
                 <span>Location</span>
-                <strong>Raipur</strong>
+                <strong>{profileData.district}</strong>
               </div>
 
             </div>
@@ -293,8 +448,12 @@ function Profile() {
 
           <div className="profile-settings-list">
 
+            {/* LOGIN & SECURITY */}
 
-            <div className="profile-setting-item">
+            <Link
+              to="/login-security"
+              className="profile-setting-item"
+            >
 
               <div className="profile-setting-icon">
                 🔐
@@ -314,10 +473,15 @@ function Profile() {
                 →
               </span>
 
-            </div>
+            </Link>
 
 
-            <div className="profile-setting-item">
+            {/* NOTIFICATIONS */}
+
+            <Link
+              to="/notifications"
+              className="profile-setting-item"
+            >
 
               <div className="profile-setting-icon">
                 🔔
@@ -337,10 +501,15 @@ function Profile() {
                 →
               </span>
 
-            </div>
+            </Link>
 
 
-            <div className="profile-setting-item">
+            {/* HELP & SUPPORT */}
+
+            <Link
+              to="/help-support"
+              className="profile-setting-item"
+            >
 
               <div className="profile-setting-icon">
                 ❓
@@ -360,8 +529,7 @@ function Profile() {
                 →
               </span>
 
-            </div>
-
+            </Link>
 
           </div>
 

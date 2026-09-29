@@ -323,6 +323,11 @@
   font-weight: 700;
 }
 
+
+/* =========================
+   EDIT PROFILE BUTTONS
+========================= */
+
 .profile-edit-btn {
   padding: 10px 16px;
 
@@ -336,10 +341,69 @@
 
   font-size: 10px;
   font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .profile-edit-btn:hover {
   background: #eaf7f1;
+
+  transform: translateY(-1px);
+}
+
+.profile-edit-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+.profile-cancel-btn,
+.profile-save-btn {
+  min-height: 38px;
+
+  padding: 0 13px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.profile-cancel-btn {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  background: rgba(255, 255, 255, 0.12);
+
+  color: #ffffff;
+}
+
+.profile-cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.profile-save-btn {
+  border: none;
+
+  background: #ffffff;
+
+  color: #07523f;
+}
+
+.profile-save-btn:hover {
+  background: #eaf7f1;
+
+  transform: translateY(-1px);
 }
 
 
@@ -461,6 +525,44 @@
 
   font-size: 11px;
   font-weight: 700;
+}
+
+
+/* =========================
+   EDIT INPUTS
+========================= */
+
+.profile-edit-input {
+  width: 100%;
+
+  min-height: 30px;
+
+  padding: 6px 8px;
+
+  border: 1px solid #9bd7bf;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #123b2d;
+
+  outline: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.profile-edit-input:focus {
+  border-color: #247d61;
+
+  box-shadow: 0 0 0 3px rgba(36, 125, 97, 0.1);
 }
 
 
@@ -647,6 +749,15 @@
     width: 100%;
   }
 
+  .profile-edit-actions {
+    width: 100%;
+  }
+
+  .profile-cancel-btn,
+  .profile-save-btn {
+    flex: 1;
+  }
+
   .profile-details-grid {
     grid-template-columns: 1fr;
   }
@@ -736,6 +847,10 @@
 
   .profile-card {
     padding: 15px;
+  }
+
+  .profile-edit-actions {
+    width: 100%;
   }
 
 }

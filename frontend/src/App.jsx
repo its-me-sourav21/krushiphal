@@ -2,6 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Login from "./pages/Login";
 import OTPVerification from "./pages/OTPVerification";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
+import PasswordResetSuccess from "./pages/PasswordResetSuccess";
 import FarmerProfile from "./pages/FarmerProfile";
 import FarmSetup from "./pages/FarmSetup";
 import Dashboard from "./pages/Dashboard";
@@ -17,6 +20,9 @@ import OrderTracking from "./pages/OrderTracking";
 import Payment from "./pages/Payment";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import RatingReview from "./pages/RatingReview";
+import LoginSecurity from "./pages/LoginSecurity";
+import Notifications from "./pages/Notifications";
+import HelpSupport from "./pages/HelpSupport";
 
 function App() {
   return (
@@ -25,9 +31,35 @@ function App() {
 
         {/* ================= AUTHENTICATION ================= */}
 
-        <Route path="/" element={<Login />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/otp" element={<OTPVerification />} />
+        <Route
+          path="/"
+          element={<Login />}
+        />
+
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+
+        <Route
+          path="/otp"
+          element={<OTPVerification />}
+        />
+
+        <Route
+          path="/forgot-password"
+          element={<ForgotPassword />}
+        />
+
+        <Route
+          path="/reset-password"
+          element={<ResetPassword />}
+        />
+
+        <Route
+          path="/password-reset-success"
+          element={<PasswordResetSuccess />}
+        />
 
 
         {/* ================= FARMER PROFILE SETUP ================= */}
@@ -139,6 +171,30 @@ function App() {
         <Route
           path="/my-profile"
           element={<Profile />}
+        />
+
+
+        {/* ================= LOGIN & SECURITY ================= */}
+
+        <Route
+          path="/login-security"
+          element={<LoginSecurity />}
+        />
+
+
+        {/* ================= NOTIFICATIONS ================= */}
+
+        <Route
+          path="/notifications"
+          element={<Notifications />}
+        />
+
+
+        {/* ================= HELP & SUPPORT ================= */}
+
+        <Route
+          path="/help-support"
+          element={<HelpSupport />}
         />
 
       </Routes>

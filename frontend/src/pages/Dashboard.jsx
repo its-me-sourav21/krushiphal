@@ -38,10 +38,30 @@ function Dashboard() {
   ];
 
   const marketPrices = [
-    { name: "Tomato", price: "₹1,800", change: "+3.2%", image: crops[0].image },
-    { name: "Potato", price: "₹1,650", change: "+1.8%", image: crops[1].image },
-    { name: "Onion", price: "₹2,200", change: "+2.4%", image: crops[2].image },
-    { name: "Maize", price: "₹2,050", change: "-1.5%", image: crops[3].image },
+    {
+      name: "Tomato",
+      price: "₹1,800",
+      change: "+3.2%",
+      image: crops[0].image,
+    },
+    {
+      name: "Potato",
+      price: "₹1,650",
+      change: "+1.8%",
+      image: crops[1].image,
+    },
+    {
+      name: "Onion",
+      price: "₹2,200",
+      change: "+2.4%",
+      image: crops[2].image,
+    },
+    {
+      name: "Maize",
+      price: "₹2,050",
+      change: "-1.5%",
+      image: crops[3].image,
+    },
   ];
 
   return (
@@ -59,40 +79,58 @@ function Dashboard() {
           </div>
 
           <nav className="dashboard-sidebar-nav">
-            <Link to="/dashboard" className="dashboard-nav-link active">
+            <Link
+              to="/dashboard"
+              className="dashboard-nav-link active"
+            >
               <span>⌂</span>
               Dashboard
             </Link>
 
-            <Link to="/farm-setup" className="dashboard-nav-link">
+            <Link
+              to="/farm-setup"
+              className="dashboard-nav-link"
+            >
               <span>🚜</span>
               My Farm
             </Link>
 
-            {/* My Crops */}
-            <Link to="/my-crops" className="dashboard-nav-link">
+            <Link
+              to="/my-crops"
+              className="dashboard-nav-link"
+            >
               <span>🌱</span>
               My Crops
             </Link>
 
-            <Link to="/marketplace" className="dashboard-nav-link">
+            <Link
+              to="/marketplace"
+              className="dashboard-nav-link"
+            >
               <span>🛒</span>
               Marketplace
             </Link>
 
-            {/* Reports - Clickable */}
-            <Link to="/reports" className="dashboard-nav-link">
+            <Link
+              to="/reports"
+              className="dashboard-nav-link"
+            >
               <span>▥</span>
               Reports
             </Link>
 
-            {/* Advisory - Clickable */}
-            <Link to="/advisory" className="dashboard-nav-link">
+            <Link
+              to="/advisory"
+              className="dashboard-nav-link"
+            >
               <span>💡</span>
               Advisory
             </Link>
 
-            <Link to="/my-profile" className="dashboard-nav-link">
+            <Link
+              to="/my-profile"
+              className="dashboard-nav-link"
+            >
               <span>♙</span>
               My Profile
             </Link>
@@ -118,16 +156,27 @@ function Dashboard() {
           </div>
 
           <div className="dashboard-user-area">
-            <button className="notification-btn">🔔</button>
+            <button className="notification-btn">
+              🔔
+            </button>
 
-            <div className="dashboard-user">
-              <div className="user-avatar">R</div>
+            {/* Profile Clickable */}
+            <Link
+              to="/my-profile"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              <div className="dashboard-user">
+                <div className="user-avatar">R</div>
 
-              <div>
-                <strong>Ramesh Kumar</strong>
-                <span>Farmer</span>
+                <div>
+                  <strong>Ramesh Kumar</strong>
+                  <span>Farmer</span>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </header>
 
@@ -135,7 +184,9 @@ function Dashboard() {
         <section className="dashboard-top-grid">
           <div className="dashboard-welcome-card">
             <div className="welcome-content">
-              <p className="welcome-small">WELCOME BACK</p>
+              <p className="welcome-small">
+                WELCOME BACK
+              </p>
 
               <h1>Good Morning, Ramesh! 👋</h1>
 
@@ -148,7 +199,9 @@ function Dashboard() {
                   <span>📍</span>
                   <div>
                     <small>Location</small>
-                    <strong>Raipur, Chhattisgarh</strong>
+                    <strong>
+                      Raipur, Chhattisgarh
+                    </strong>
                   </div>
                 </div>
 
@@ -173,7 +226,9 @@ function Dashboard() {
             <div className="welcome-illustration">
               <div className="sun">☀️</div>
               <div className="farmer-emoji">👨‍🌾</div>
-              <div className="plant-decoration">🌿</div>
+              <div className="plant-decoration">
+                🌿
+              </div>
             </div>
           </div>
 
@@ -185,7 +240,9 @@ function Dashboard() {
                 <small>Today&apos;s Weather</small>
                 <h2>28°C</h2>
                 <p>Partly Cloudy</p>
-                <span>Raipur, Chhattisgarh</span>
+                <span>
+                  Raipur, Chhattisgarh
+                </span>
               </div>
             </div>
 
@@ -215,7 +272,10 @@ function Dashboard() {
 
         {/* Quick Actions */}
         <section className="quick-actions">
-          <Link to="/farm-setup" className="quick-action-card green">
+          <Link
+            to="/farm-setup"
+            className="quick-action-card green"
+          >
             <div className="quick-icon">🌿</div>
 
             <div>
@@ -226,7 +286,10 @@ function Dashboard() {
             <span className="quick-arrow">→</span>
           </Link>
 
-          <Link to="/farm-setup" className="quick-action-card yellow">
+          <Link
+            to="/farm-setup"
+            className="quick-action-card yellow"
+          >
             <div className="quick-icon">🚜</div>
 
             <div>
@@ -237,7 +300,10 @@ function Dashboard() {
             <span className="quick-arrow">→</span>
           </Link>
 
-          <Link to="/marketplace" className="quick-action-card blue">
+          <Link
+            to="/marketplace"
+            className="quick-action-card blue"
+          >
             <div className="quick-icon">🛒</div>
 
             <div>
@@ -265,19 +331,29 @@ function Dashboard() {
           <div className="dashboard-card crops-card">
             <div className="card-header">
               <div>
-                <span className="section-label">🌱 FARM MANAGEMENT</span>
+                <span className="section-label">
+                  🌱 FARM MANAGEMENT
+                </span>
                 <h2>My Crops</h2>
                 <p>Total 4 crops • 5.2 acres</p>
               </div>
 
-              <button type="button">View All →</button>
+              <button type="button">
+                View All →
+              </button>
             </div>
 
             <div className="crop-grid">
               {crops.map((crop) => (
-                <div className="crop-card" key={crop.name}>
+                <div
+                  className="crop-card"
+                  key={crop.name}
+                >
                   <div className="crop-image">
-                    <img src={crop.image} alt={crop.name} />
+                    <img
+                      src={crop.image}
+                      alt={crop.name}
+                    />
 
                     <span
                       className={`crop-status ${
@@ -297,11 +373,15 @@ function Dashboard() {
                     <div className="crop-progress-row">
                       <div className="crop-progress">
                         <span
-                          style={{ width: `${crop.progress}%` }}
+                          style={{
+                            width: `${crop.progress}%`,
+                          }}
                         ></span>
                       </div>
 
-                      <strong>{crop.progress}%</strong>
+                      <strong>
+                        {crop.progress}%
+                      </strong>
                     </div>
                   </div>
                 </div>
@@ -312,7 +392,9 @@ function Dashboard() {
           <div className="dashboard-card farm-overview-card">
             <div className="card-header">
               <div>
-                <span className="section-label">🌱 FARM DETAILS</span>
+                <span className="section-label">
+                  🌱 FARM DETAILS
+                </span>
                 <h2>Farm Overview</h2>
                 <p>Your farm distribution</p>
               </div>
@@ -365,18 +447,28 @@ function Dashboard() {
           <div className="dashboard-card market-card">
             <div className="card-header">
               <div>
-                <span className="section-label">🌱 MARKET</span>
+                <span className="section-label">
+                  🌱 MARKET
+                </span>
                 <h2>Vegetable Market Prices</h2>
                 <p>Latest market prices</p>
               </div>
 
-              <Link to="/marketplace">View Marketplace →</Link>
+              <Link to="/marketplace">
+                View Marketplace →
+              </Link>
             </div>
 
             <div className="market-grid">
               {marketPrices.map((item) => (
-                <div className="market-item" key={item.name}>
-                  <img src={item.image} alt={item.name} />
+                <div
+                  className="market-item"
+                  key={item.name}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                  />
 
                   <h3>{item.name}</h3>
                   <strong>{item.price}</strong>
@@ -399,9 +491,13 @@ function Dashboard() {
           <div className="dashboard-card activity-card">
             <div className="card-header">
               <div>
-                <span className="section-label">🌱 ACTIVITY</span>
+                <span className="section-label">
+                  🌱 ACTIVITY
+                </span>
                 <h2>Recent Activities</h2>
-                <p>Latest updates from your farm</p>
+                <p>
+                  Latest updates from your farm
+                </p>
               </div>
             </div>
 
@@ -409,32 +505,48 @@ function Dashboard() {
               <div className="activity-item">
                 <span>🍅</span>
                 <div>
-                  <p>You updated your Tomato crop details</p>
-                  <small>Today, 09:45 AM</small>
+                  <p>
+                    You updated your Tomato crop details
+                  </p>
+                  <small>
+                    Today, 09:45 AM
+                  </small>
                 </div>
               </div>
 
               <div className="activity-item">
                 <span>🌧️</span>
                 <div>
-                  <p>Weather alert: Light rain expected tomorrow</p>
-                  <small>Today, 07:20 AM</small>
+                  <p>
+                    Weather alert: Light rain expected tomorrow
+                  </p>
+                  <small>
+                    Today, 07:20 AM
+                  </small>
                 </div>
               </div>
 
               <div className="activity-item">
                 <span>🧅</span>
                 <div>
-                  <p>Onion market price increased by 2.4%</p>
-                  <small>Yesterday, 06:30 PM</small>
+                  <p>
+                    Onion market price increased by 2.4%
+                  </p>
+                  <small>
+                    Yesterday, 06:30 PM
+                  </small>
                 </div>
               </div>
 
               <div className="activity-item">
                 <span>🌽</span>
                 <div>
-                  <p>You added a new Maize field</p>
-                  <small>Yesterday, 04:15 PM</small>
+                  <p>
+                    You added a new Maize field
+                  </p>
+                  <small>
+                    Yesterday, 04:15 PM
+                  </small>
                 </div>
               </div>
             </div>
@@ -444,12 +556,16 @@ function Dashboard() {
           <div className="dashboard-card health-card">
             <div className="card-header">
               <div>
-                <span className="section-label">🌱 CROP HEALTH</span>
+                <span className="section-label">
+                  🌱 CROP HEALTH
+                </span>
                 <h2>Vegetable Health</h2>
                 <p>Current health status</p>
               </div>
 
-              <button type="button">View Report →</button>
+              <button type="button">
+                View Report →
+              </button>
             </div>
 
             <div className="health-content">
@@ -488,13 +604,21 @@ function Dashboard() {
 
             <div>
               <span>SMART FARMING TIP</span>
-              <h2>Healthy Soil = Healthy Vegetables</h2>
-              <p>Better soil management for healthier vegetables.</p>
+              <h2>
+                Healthy Soil = Healthy Vegetables
+              </h2>
+              <p>
+                Better soil management for healthier vegetables.
+              </p>
             </div>
 
-            <button type="button">Learn More →</button>
+            <button type="button">
+              Learn More →
+            </button>
 
-            <div className="tip-decoration">🌿</div>
+            <div className="tip-decoration">
+              🌿
+            </div>
           </div>
         </section>
       </main>
