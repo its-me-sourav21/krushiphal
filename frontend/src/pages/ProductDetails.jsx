@@ -1,430 +1,256 @@
-import { Link, useNavigate } from "react-router-dom";
-import "./ProductDetails.css";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ProductDetails() {
   const navigate = useNavigate();
 
+  const [quantity, setQuantity] = useState(1);
+  const [toast, setToast] = useState("");
+
   const product = {
-    crop: "Tomato",
-    variety: "Fresh Tomato",
-    price: "₹1,800",
-    unit: "per quintal",
-    quantity: "50 Quintal",
-    seller: "Amit Verma",
+    id: 1,
+    name: "Tomato",
+    price: 40,
+    quantity: "120 kg available",
+    farmerName: "Amit Verma",
     location: "Bilaspur, Chhattisgarh",
-    quality: "Fresh & Good Quality",
-    harvestDate: "15 Sep 2026",
-    image:
-      "https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=1200&q=85",
+    description:
+      "Fresh quality tomatoes directly from a trusted local farmer. Carefully selected produce for your everyday cooking needs.",
   };
 
-  const handleBuyNow = () => {
-    navigate("/payment");
-  };
+  useEffect(() => {
+    if (!toast) return;
 
-  const handleAddToCart = () => {
-    navigate("/cart");
-  };
+    const timer = setTimeout(() => {
+      setToast("");
+    }, 2200);
+
+    return () => clearTimeout(timer);
+  }, [toast]);
+
+  const total = product.price * quantity;
+
+  function addToCart() {
+    const savedCart = JSON.parse(
+      localStorage.getItem("krushiphal_cart") || "[]"
+    );
+
+    const existingIndex = savedCart.findIndex(
+      (item) =>
+        String(item.productId) === String(product.id)
+    );
+
+    if (existingIndex !== -1) {
+      savedCart[existingIndex].quantity += quantity;
+    } else {
+      savedCart.push({
+        productId: product.id,
+        name: product.name,
+        price: product.price,
+        location: product.location,
+        farmerName: product.farmerName,
+        quantity: quantity,
+      });
+    }
+
+    localStorage.setItem(
+      "krushiphal_cart",
+      JSON.stringify(savedCart)
+    );
+
+    window.dispatchEvent(
+      new Event("krushiphal-cart-change")
+    );
+
+    setToast("Added to cart ✓");
+  }
+
+  function buyNow() {
+    const item = {
+      productId: product.id,
+      name: product.name,
+      price: product.price,
+      location: product.location,
+      farmerName: product.farmerName,
+      quantity: quantity,
+    };
+
+    navigate("/payment", {
+      state: {
+        items: [item],
+      },
+    });
+  }
 
   return (
-    <div className="product-details-layout">
+    <div className="dashboard">
 
-      {/* ================= SIDEBAR ================= */}
+      {toast && (
+        <div
+          style={{
+            position: "fixed",
+            top: "25px",
+            right: "25px",
+            zIndex: 9999,
+            background: "#151515",
+            color: "#fff",
+            border: "1px solid #6ee7f9",
+            borderRadius: "10px",
+            padding: "14px 20px",
+            boxShadow:
+              "0 10px 30px rgba(0,0,0,0.35)",
+            fontWeight: "600",
+          }}
+        >
+          ✓ {toast}
+        </div>
+      )}
 
-      <aside className="product-details-sidebar">
+      <div className="dashboard-topbar">
 
         <div>
+          <p className="tag">
+            AGRILINK / PRODUCT
+          </p>
 
-          <div className="product-details-brand">
+          <h1>{product.name}</h1>
 
-            <div className="product-details-brand-logo">
-              🌿
-            </div>
-
-            <div>
-              <h2>Krushiphal</h2>
-              <p>Smart Farming, Better Future</p>
-            </div>
-
-          </div>
-
-
-          <nav className="product-details-sidebar-nav">
-
-            <Link
-              to="/dashboard"
-              className="product-details-nav-link"
-            >
-              <span>⌂</span>
-              Dashboard
-            </Link>
-
-            <Link
-              to="/farm-setup"
-              className="product-details-nav-link"
-            >
-              <span>🚜</span>
-              My Farm
-            </Link>
-
-            <Link
-              to="/my-crops"
-              className="product-details-nav-link"
-            >
-              <span>🌱</span>
-              My Crops
-            </Link>
-
-            <Link
-              to="/marketplace"
-              className="product-details-nav-link active"
-            >
-              <span>🛒</span>
-              Marketplace
-            </Link>
-
-            <Link
-              to="/reports"
-              className="product-details-nav-link"
-            >
-              <span>▥</span>
-              Reports
-            </Link>
-
-            <Link
-              to="/advisory"
-              className="product-details-nav-link"
-            >
-              <span>💡</span>
-              Advisory
-            </Link>
-
-            <Link
-              to="/my-profile"
-              className="product-details-nav-link"
-            >
-              <span>♙</span>
-              My Profile
-            </Link>
-
-          </nav>
-
+          <p className="logged-user">
+            📍 {product.location}
+          </p>
         </div>
 
-
-        <Link
-          to="/"
-          className="product-details-logout"
+        <button
+          className="secondary-btn"
+          onClick={() =>
+            navigate("/marketplace")
+          }
         >
-          <span>↪</span>
-          Logout
-        </Link>
+          ← MARKETPLACE
+        </button>
 
-      </aside>
+      </div>
 
+      <div className="product-card">
 
-      {/* ================= MAIN ================= */}
+        <span className="tag">
+          FARM FRESH PRODUCE
+        </span>
 
-      <main className="product-details-main">
+        <h2>{product.name}</h2>
 
-        {/* HEADER */}
+        <h1>
+          ₹{product.price}
+          <span style={{ fontSize: "18px" }}>
+            {" "}
+            / KG
+          </span>
+        </h1>
 
-        <header className="product-details-header">
+        <p>
+          Available quantity:{" "}
+          <strong>{product.quantity}</strong>
+        </p>
 
-          <div>
+        <p>
+          Farmer:{" "}
+          <strong>
+            {product.farmerName}
+          </strong>
+        </p>
 
-            <p className="product-details-label">
-              KRUSHPHAL MARKET
-            </p>
+        <p>
+          📍 {product.location}
+        </p>
 
-            <h1>
-              Product Details
-            </h1>
+        <p style={{ marginTop: "20px" }}>
+          {product.description}
+        </p>
 
-            <p className="product-details-subtitle">
-              View complete information about this vegetable listing.
-            </p>
+        <div style={{ marginTop: "30px" }}>
 
-          </div>
+          <h3>SELECT QUANTITY</h3>
 
-
-          <Link
-            to="/marketplace"
-            className="product-details-back-btn"
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "20px",
+              marginTop: "15px",
+            }}
           >
-            ← Back to Marketplace
-          </Link>
 
-        </header>
+            <button
+              className="secondary-btn"
+              onClick={() =>
+                setQuantity(
+                  Math.max(
+                    1,
+                    quantity - 1
+                  )
+                )
+              }
+            >
+              −
+            </button>
 
+            <strong
+              style={{
+                fontSize: "24px",
+              }}
+            >
+              {quantity}
+            </strong>
 
-        {/* ================= PRODUCT ================= */}
-
-        <section className="product-details-card">
-
-          <div className="product-details-image-section">
-
-            <div className="product-details-image">
-              <img
-                src={product.image}
-                alt={product.crop}
-              />
-
-              <span className="product-details-available">
-                Available
-              </span>
-            </div>
-
-          </div>
-
-
-          <div className="product-details-content">
-
-            <span className="product-details-category">
-              🌱 VEGETABLE
-            </span>
-
-            <h2>
-              {product.crop}
-            </h2>
-
-            <p className="product-details-variety">
-              {product.variety}
-            </p>
-
-
-            <div className="product-details-price">
-
-              <strong>
-                {product.price}
-              </strong>
-
-              <span>
-                {product.unit}
-              </span>
-
-            </div>
-
-
-            <div className="product-details-rating">
-              <span>★★★★★</span>
-              <p>Fresh farm produce</p>
-            </div>
-
-
-            <div className="product-details-info-grid">
-
-              <div>
-                <span>Available Quantity</span>
-                <strong>{product.quantity}</strong>
-              </div>
-
-              <div>
-                <span>Quality</span>
-                <strong>{product.quality}</strong>
-              </div>
-
-              <div>
-                <span>Harvest Date</span>
-                <strong>{product.harvestDate}</strong>
-              </div>
-
-              <div>
-                <span>Location</span>
-                <strong>{product.location}</strong>
-              </div>
-
-            </div>
-
-
-            <div className="product-details-seller">
-
-              <div className="seller-avatar">
-                A
-              </div>
-
-              <div>
-                <span>Seller</span>
-                <strong>{product.seller}</strong>
-                <p>{product.location}</p>
-              </div>
-
-            </div>
-
-
-            <div className="product-details-actions">
-
-              <button
-                type="button"
-                className="add-to-cart-btn"
-                onClick={handleAddToCart}
-              >
-                🛒 Add to Cart
-              </button>
-
-              <button
-                type="button"
-                className="buy-now-btn"
-                onClick={handleBuyNow}
-              >
-                Buy Now →
-              </button>
-
-            </div>
+            <button
+              className="primary-btn"
+              onClick={() =>
+                setQuantity(
+                  quantity + 1
+                )
+              }
+            >
+              +
+            </button>
 
           </div>
-
-        </section>
-
-
-        {/* ================= PRODUCT INFORMATION ================= */}
-
-        <section className="product-details-info-card">
-
-          <div className="product-details-section-header">
-
-            <div>
-              <span>
-                🌱 PRODUCT INFORMATION
-              </span>
-
-              <h2>
-                About This Produce
-              </h2>
-            </div>
-
-          </div>
-
-
-          <div className="product-details-description">
-
-            <p>
-              This is fresh tomato produce directly listed by the farmer.
-              The vegetables are available for purchase in the listed quantity
-              and can be ordered through Krushiphal Marketplace.
-            </p>
-
-          </div>
-
-
-          <div className="product-details-features">
-
-            <div>
-              <span>🌱</span>
-              <div>
-                <strong>Fresh Produce</strong>
-                <p>Farm-fresh vegetables</p>
-              </div>
-            </div>
-
-            <div>
-              <span>📦</span>
-              <div>
-                <strong>Bulk Quantity</strong>
-                <p>Available in quintals</p>
-              </div>
-            </div>
-
-            <div>
-              <span>🚚</span>
-              <div>
-                <strong>Delivery Available</strong>
-                <p>Delivery to selected location</p>
-              </div>
-            </div>
-
-            <div>
-              <span>👨‍🌾</span>
-              <div>
-                <strong>Direct Farmer</strong>
-                <p>Buy directly from seller</p>
-              </div>
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* ================= SELLER INFORMATION ================= */}
-
-        <section className="product-details-seller-card">
-
-          <div className="product-details-section-header">
-
-            <div>
-              <span>
-                👨‍🌾 SELLER INFORMATION
-              </span>
-
-              <h2>
-                Farmer Details
-              </h2>
-            </div>
-
-          </div>
-
-
-          <div className="seller-details-wrapper">
-
-            <div className="seller-large-avatar">
-              A
-            </div>
-
-            <div className="seller-details-text">
-
-              <h3>
-                {product.seller}
-              </h3>
-
-              <p>
-                Farmer • {product.location}
-              </p>
-
-              <span>
-                ✓ Verified Seller
-              </span>
-
-            </div>
-
-            <div className="seller-location-box">
-
-              <span>
-                📍 Location
-              </span>
-
-              <strong>
-                {product.location}
-              </strong>
-
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* ================= ACTIONS ================= */}
-
-        <div className="product-details-bottom-actions">
-
-          <Link
-            to="/marketplace"
-            className="back-marketplace-btn"
-          >
-            ← Continue Shopping
-          </Link>
-
-          <Link
-            to="/cart"
-            className="view-cart-btn"
-          >
-            🛒 View Cart
-          </Link>
 
         </div>
 
-      </main>
+        <h2
+          style={{
+            marginTop: "30px",
+          }}
+        >
+          TOTAL: ₹{total}
+        </h2>
+
+        <div
+          style={{
+            display: "flex",
+            gap: "15px",
+            flexWrap: "wrap",
+            marginTop: "25px",
+          }}
+        >
+
+          <button
+            className="secondary-btn"
+            onClick={addToCart}
+          >
+            🛒 ADD TO CART
+          </button>
+
+          <button
+            className="primary-btn"
+            onClick={buyNow}
+          >
+            BUY NOW →
+          </button>
+
+        </div>
+
+      </div>
 
     </div>
   );

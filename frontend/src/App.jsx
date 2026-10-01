@@ -1,204 +1,243 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 import Login from "./pages/Login";
-import OTPVerification from "./pages/OTPVerification";
-import ForgotPassword from "./pages/ForgotPassword";
-import ResetPassword from "./pages/ResetPassword";
-import PasswordResetSuccess from "./pages/PasswordResetSuccess";
-import FarmerProfile from "./pages/FarmerProfile";
-import FarmSetup from "./pages/FarmSetup";
+
 import Dashboard from "./pages/Dashboard";
-import Marketplace from "./pages/Marketplace";
-import ProductDetails from "./pages/ProductDetails";
-import Profile from "./pages/Profile";
-import Cart from "./pages/Cart";
-import AddProduce from "./pages/AddProduce";
-import Reports from "./pages/Reports";
-import Advisory from "./pages/Advisory";
+import FarmSetup from "./pages/FarmSetup";
 import MyCrops from "./pages/MyCrops";
+import AddProduce from "./pages/AddProduce";
+import Marketplace from "./pages/Marketplace";
+
+import ProductDetails from "./pages/ProductDetails";
+import Cart from "./pages/Cart";
 import OrderTracking from "./pages/OrderTracking";
 import Payment from "./pages/Payment";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import RatingReview from "./pages/RatingReview";
-import LoginSecurity from "./pages/LoginSecurity";
-import Notifications from "./pages/Notifications";
-import HelpSupport from "./pages/HelpSupport";
+import Reports from "./pages/Reports";
+import Advisory from "./pages/Advisory";
+import Profile from "./pages/Profile";
+
+import BuyerDashboard from "./pages/BuyerDashboard";
+import BuyerMarketplace from "./pages/BuyerMarketplace";
+import BuyerProductDetails from "./pages/BuyerProductDetails";
+import BuyerCart from "./pages/BuyerCart";
+import BuyerPayment from "./pages/BuyerPayment";
+import BuyerPaymentSuccess from "./pages/BuyerPaymentSuccess";
+import BuyerOrderTracking from "./pages/BuyerOrderTracking";
+import BuyerNotifications from "./pages/BuyerNotifications";
+import BuyerRatingReview from "./pages/BuyerRatingReview";
+import BuyerMyProfile from "./pages/BuyerMyProfile";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
+    <Routes>
 
-        {/* ================= AUTHENTICATION ================= */}
+      {/* =========================
+          DEFAULT
+      ========================= */}
 
-        <Route
-          path="/"
-          element={<Login />}
-        />
+      <Route
+        path="/"
+        element={
+          <Navigate
+            to="/buyer-dashboard"
+            replace
+          />
+        }
+      />
 
-        <Route
-          path="/login"
-          element={<Login />}
-        />
+      {/* =========================
+          AUTH
+      ========================= */}
 
-        <Route
-          path="/otp"
-          element={<OTPVerification />}
-        />
+      <Route
+        path="/login"
+        element={<Login />}
+      />
 
-        <Route
-          path="/forgot-password"
-          element={<ForgotPassword />}
-        />
+      {/* =========================
+          FARMER
+      ========================= */}
 
-        <Route
-          path="/reset-password"
-          element={<ResetPassword />}
-        />
+      <Route
+        path="/dashboard"
+        element={<Dashboard />}
+      />
 
-        <Route
-          path="/password-reset-success"
-          element={<PasswordResetSuccess />}
-        />
+      <Route
+        path="/farm-setup"
+        element={<FarmSetup />}
+      />
 
+      <Route
+        path="/my-farm"
+        element={<FarmSetup />}
+      />
 
-        {/* ================= FARMER PROFILE SETUP ================= */}
+      <Route
+        path="/farm-setup-form"
+        element={<FarmSetup />}
+      />
 
-        <Route
-          path="/profile"
-          element={<FarmerProfile />}
-        />
+      <Route
+        path="/my-crops"
+        element={<MyCrops />}
+      />
 
+      <Route
+        path="/add-produce"
+        element={<AddProduce />}
+      />
 
-        {/* ================= MY FARM ================= */}
+      <Route
+        path="/marketplace"
+        element={<Marketplace />}
+      />
 
-        <Route
-          path="/farm-setup"
-          element={<FarmSetup />}
-        />
+      {/* Farmer Product Details */}
+      <Route
+        path="/product-details/:id"
+        element={<ProductDetails />}
+      />
 
-        <Route
-          path="/my-farm"
-          element={<FarmSetup />}
-        />
+      {/* Farmer Cart */}
+      <Route
+        path="/cart"
+        element={<Cart />}
+      />
 
-        <Route
-          path="/farm-setup-form"
-          element={<FarmSetup />}
-        />
+      {/* Farmer Order Tracking */}
+      <Route
+        path="/order-tracking"
+        element={<OrderTracking />}
+      />
 
+      {/* Farmer Payment */}
+      <Route
+        path="/payment"
+        element={<Payment />}
+      />
 
-        {/* ================= DASHBOARD ================= */}
+      <Route
+        path="/payment/:id"
+        element={<Payment />}
+      />
 
-        <Route
-          path="/dashboard"
-          element={<Dashboard />}
-        />
+      {/* Farmer Payment Success */}
+      <Route
+        path="/payment-success"
+        element={<PaymentSuccess />}
+      />
 
+      <Route
+        path="/payment-success/:id"
+        element={<PaymentSuccess />}
+      />
 
-        {/* ================= MY CROPS ================= */}
+      {/* Farmer Rating & Review */}
+      <Route
+        path="/rating-review"
+        element={<RatingReview />}
+      />
 
-        <Route
-          path="/my-crops"
-          element={<MyCrops />}
-        />
+      <Route
+        path="/rating/:id"
+        element={<RatingReview />}
+      />
 
-        <Route
-          path="/add-produce"
-          element={<AddProduce />}
-        />
+      {/* Farmer Reports */}
+      <Route
+        path="/reports"
+        element={<Reports />}
+      />
 
+      {/* Farmer Advisory */}
+      <Route
+        path="/advisory"
+        element={<Advisory />}
+      />
 
-        {/* ================= MARKETPLACE ================= */}
+      {/* Farmer Profile */}
+      <Route
+        path="/my-profile"
+        element={<Profile />}
+      />
 
-        <Route
-          path="/marketplace"
-          element={<Marketplace />}
-        />
+      {/* =========================
+          BUYER
+      ========================= */}
 
-        <Route
-          path="/product-details"
-          element={<ProductDetails />}
-        />
+      <Route
+        path="/buyer-dashboard"
+        element={<BuyerDashboard />}
+      />
 
-        <Route
-          path="/cart"
-          element={<Cart />}
-        />
+      <Route
+        path="/buyer-marketplace"
+        element={<BuyerMarketplace />}
+      />
 
+      {/* Buyer Product Details */}
+      <Route
+        path="/buyer-product-details"
+        element={<BuyerProductDetails />}
+      />
 
-        {/* ================= ORDER ================= */}
+      <Route
+        path="/buyer-cart"
+        element={<BuyerCart />}
+      />
 
-        <Route
-          path="/order-tracking"
-          element={<OrderTracking />}
-        />
+      <Route
+        path="/buyer-payment"
+        element={<BuyerPayment />}
+      />
 
-        <Route
-          path="/payment"
-          element={<Payment />}
-        />
+      <Route
+        path="/buyer-payment-success"
+        element={<BuyerPaymentSuccess />}
+      />
 
-        <Route
-          path="/payment-success"
-          element={<PaymentSuccess />}
-        />
+      <Route
+        path="/buyer-order-tracking"
+        element={<BuyerOrderTracking />}
+      />
 
-        <Route
-          path="/rating-review"
-          element={<RatingReview />}
-        />
+      <Route
+        path="/buyer-notifications"
+        element={<BuyerNotifications />}
+      />
 
+      <Route
+        path="/buyer-rating-review"
+        element={<BuyerRatingReview />}
+      />
 
-        {/* ================= REPORTS ================= */}
+      <Route
+        path="/buyer-my-profile"
+        element={<BuyerMyProfile />}
+      />
 
-        <Route
-          path="/reports"
-          element={<Reports />}
-        />
+      {/* =========================
+          UNKNOWN ROUTE
+      ========================= */}
 
+      <Route
+        path="*"
+        element={
+          <Navigate
+            to="/buyer-dashboard"
+            replace
+          />
+        }
+      />
 
-        {/* ================= ADVISORY ================= */}
-
-        <Route
-          path="/advisory"
-          element={<Advisory />}
-        />
-
-
-        {/* ================= MY PROFILE ================= */}
-
-        <Route
-          path="/my-profile"
-          element={<Profile />}
-        />
-
-
-        {/* ================= LOGIN & SECURITY ================= */}
-
-        <Route
-          path="/login-security"
-          element={<LoginSecurity />}
-        />
-
-
-        {/* ================= NOTIFICATIONS ================= */}
-
-        <Route
-          path="/notifications"
-          element={<Notifications />}
-        />
-
-
-        {/* ================= HELP & SUPPORT ================= */}
-
-        <Route
-          path="/help-support"
-          element={<HelpSupport />}
-        />
-
-      </Routes>
-    </BrowserRouter>
+    </Routes>
   );
 }
 

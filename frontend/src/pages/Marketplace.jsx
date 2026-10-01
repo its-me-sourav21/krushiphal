@@ -43,10 +43,12 @@ function Marketplace() {
 
   return (
     <div className="marketplace-layout">
+
       {/* ================= SIDEBAR ================= */}
 
       <aside className="marketplace-sidebar">
         <div>
+
           <div className="marketplace-brand">
             <div className="marketplace-brand-logo">🌿</div>
 
@@ -57,6 +59,7 @@ function Marketplace() {
           </div>
 
           <nav className="marketplace-sidebar-nav">
+
             <Link
               to="/dashboard"
               className="marketplace-nav-link"
@@ -112,6 +115,7 @@ function Marketplace() {
               <span>♙</span>
               My Profile
             </Link>
+
           </nav>
         </div>
 
@@ -124,9 +128,11 @@ function Marketplace() {
       {/* ================= MAIN CONTENT ================= */}
 
       <main className="marketplace-main">
-        {/* Header */}
+
+        {/* HEADER */}
 
         <header className="marketplace-header">
+
           <div>
             <p className="marketplace-label">
               KRUSHPHAL MARKET
@@ -142,11 +148,13 @@ function Marketplace() {
           <button className="sell-btn">
             + Sell Your Crop
           </button>
+
         </header>
 
-        {/* Search & Filters */}
+        {/* SEARCH & FILTERS */}
 
         <div className="marketplace-toolbar">
+
           <div className="search-box">
             <span>🔍</span>
 
@@ -170,31 +178,36 @@ function Marketplace() {
             <option>Bilaspur</option>
             <option>Korba</option>
           </select>
+
         </div>
 
-        {/* Market Info */}
+        {/* MARKET INFO */}
 
         <div className="marketplace-info">
+
           <div>
             <strong>Today's Vegetable Market</strong>
-
             <span> Fresh listings from farmers</span>
           </div>
 
           <span className="listing-count">
             {products.length} Products Available
           </span>
+
         </div>
 
-        {/* Product Cards */}
+        {/* PRODUCT CARDS */}
 
         <div className="product-grid">
+
           {products.map((product) => (
             <div
               className="product-card"
               key={product.id}
             >
+
               <div className="product-image">
+
                 <img
                   src={product.image}
                   alt={product.crop}
@@ -203,24 +216,30 @@ function Marketplace() {
                 <span className="available-badge">
                   Available
                 </span>
+
               </div>
 
               <div className="product-content">
+
                 <div className="product-title-row">
+
                   <div>
                     <h2>{product.crop}</h2>
-
                     <p>{product.variety}</p>
                   </div>
 
                   <div className="price">
+
                     <strong>{product.price}</strong>
 
                     <span>{product.unit}</span>
+
                   </div>
+
                 </div>
 
                 <div className="product-details">
+
                   <div>
                     <span>Quantity</span>
 
@@ -244,18 +263,49 @@ function Marketplace() {
                       {product.location}
                     </strong>
                   </div>
+
                 </div>
 
-                <Link
-                  to="/product-details"
-                  className="details-btn"
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "10px",
+                    alignItems: "center",
+                    marginTop: "16px",
+                  }}
                 >
-                  View Details →
-                </Link>
+
+                  <Link
+                    to="/product-details"
+                    className="details-btn"
+                    style={{
+                      flex: 1,
+                      textAlign: "center",
+                    }}
+                  >
+                    View Details →
+                  </Link>
+
+                  <Link
+                    to="/cart"
+                    className="details-btn"
+                    style={{
+                      flex: 1,
+                      textAlign: "center",
+                    }}
+                  >
+                    🛒 Cart
+                  </Link>
+
+                </div>
+
               </div>
+
             </div>
           ))}
+
         </div>
+
       </main>
     </div>
   );

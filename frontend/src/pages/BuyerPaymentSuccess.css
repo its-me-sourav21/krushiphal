@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+}
+
+.buyer-payment-success-layout {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(45, 125, 98, 0.12),
+      transparent 30%
+    ),
+    #f3f8f5;
+  color: #173c2f;
+  font-family: Arial, sans-serif;
+}
+
+.buyer-payment-success-main {
+  min-height: 100vh;
+  padding: 60px 25px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-card {
+  width: 100%;
+  max-width: 650px;
+  padding: 42px;
+  background: #ffffff;
+  border: 1px solid #dfeae5;
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(23, 72, 58, 0.08);
+  text-align: center;
+}
+
+.success-icon {
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  background: #e3f4eb;
+  color: #2d7d62;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.success-label {
+  margin: 0 0 8px;
+  color: #2d7d62;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.success-card h1 {
+  margin: 0;
+  color: #173c2f;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.success-message {
+  max-width: 500px;
+  margin: 12px auto 28px;
+  color: #70847d;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.success-order-box {
+  padding: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  background: #f5faf7;
+  border: 1px solid #e0ece7;
+  border-radius: 14px;
+  text-align: left;
+}
+
+.success-order-box div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.success-order-box span {
+  color: #81948c;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.success-order-box strong {
+  color: #285746;
+  font-size: 14px;
+}
+
+.success-delivery {
+  margin-top: 18px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #eef8f3;
+  border: 1px solid #dceee5;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.success-delivery > span {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 11px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+}
+
+.success-delivery strong {
+  display: block;
+  color: #2d604f;
+  font-size: 13px;
+}
+
+.success-delivery p {
+  margin: 4px 0 0;
+  color: #7b9087;
+  font-size: 11px;
+}
+
+.success-actions {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.track-order-btn,
+.back-dashboard-btn {
+  min-height: 46px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.track-order-btn {
+  background: #064b3b;
+  color: #ffffff;
+}
+
+.track-order-btn:hover {
+  background: #0a624d;
+}
+
+.back-dashboard-btn {
+  background: #ffffff;
+  color: #286651;
+  border: 1px solid #cfe0d9;
+}
+
+.back-dashboard-btn:hover {
+  background: #edf6f1;
+}
+
+.buyer-payment-success-footer {
+  padding-top: 25px;
+  color: #82948d;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .buyer-payment-success-main {
+    padding: 30px 15px;
+  }
+
+  .success-card {
+    padding: 28px 18px;
+  }
+
+  .success-card h1 {
+    font-size: 25px;
+  }
+
+  .success-order-box {
+    grid-template-columns: 1fr;
+  }
+
+  .success-actions {
+    flex-direction: column;
+  }
+
+  .track-order-btn,
+  .back-dashboard-btn {
+    width: 100%;
+  }
+}
