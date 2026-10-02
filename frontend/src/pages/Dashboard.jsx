@@ -112,6 +112,14 @@ function Dashboard() {
             </Link>
 
             <Link
+              to="/ai-prediction"
+              className="dashboard-nav-link"
+            >
+              <span>🤖</span>
+              AI Prediction
+            </Link>
+
+            <Link
               to="/reports"
               className="dashboard-nav-link"
             >
@@ -326,7 +334,7 @@ function Dashboard() {
           </div>
         </section>
 
-        {/* Crops + Farm Overview */}
+        {/* Crops + AI Prediction */}
         <section className="dashboard-content-grid">
           <div className="dashboard-card crops-card">
             <div className="card-header">
@@ -389,55 +397,62 @@ function Dashboard() {
             </div>
           </div>
 
+          {/* AI Prediction */}
           <div className="dashboard-card farm-overview-card">
             <div className="card-header">
               <div>
                 <span className="section-label">
-                  🌱 FARM DETAILS
+                  🤖 AI PREDICTION
                 </span>
-                <h2>Farm Overview</h2>
-                <p>Your farm distribution</p>
+                <h2>Vegetable Price Prediction</h2>
+                <p>Expected market prices for 7 days</p>
               </div>
             </div>
 
             <div className="farm-overview-body">
               <div className="farm-donut">
                 <div className="donut-inner">
-                  <strong>5.2</strong>
-                  <span>Acres</span>
+                  <strong>7</strong>
+                  <span>Days</span>
                 </div>
               </div>
 
               <div className="farm-legend">
                 <div>
                   <span className="legend-dot tomato"></span>
-                  <span>Tomato</span>
-                  <strong>2.0 ac</strong>
+                  <span>District</span>
+                  <strong>Select</strong>
                 </div>
 
                 <div>
                   <span className="legend-dot potato"></span>
-                  <span>Potato</span>
-                  <strong>1.5 ac</strong>
+                  <span>Mandi</span>
+                  <strong>Select</strong>
                 </div>
 
                 <div>
                   <span className="legend-dot onion"></span>
-                  <span>Onion</span>
-                  <strong>1.2 ac</strong>
+                  <span>Vegetable</span>
+                  <strong>Select</strong>
                 </div>
 
                 <div>
                   <span className="legend-dot maize"></span>
-                  <span>Maize</span>
-                  <strong>0.5 ac</strong>
+                  <span>Forecast</span>
+                  <strong>7 Days</strong>
                 </div>
               </div>
             </div>
 
-            <button className="farm-map-btn">
-              🗺️ View Farm Map
-            </button>
+            <Link
+              to="/ai-prediction"
+              className="farm-map-btn"
+              style={{
+                textDecoration: "none",
+              }}
+            >
+              🤖 Start AI Prediction →
+            </Link>
           </div>
         </section>
 

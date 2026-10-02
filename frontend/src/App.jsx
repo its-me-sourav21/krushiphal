@@ -22,6 +22,8 @@ import Reports from "./pages/Reports";
 import Advisory from "./pages/Advisory";
 import Profile from "./pages/Profile";
 
+import AIPrediction from "./pages/AIPrediction";
+
 import BuyerDashboard from "./pages/BuyerDashboard";
 import BuyerMarketplace from "./pages/BuyerMarketplace";
 import BuyerProductDetails from "./pages/BuyerProductDetails";
@@ -166,6 +168,12 @@ function App() {
       <Route
         path="/my-profile"
         element={<Profile />}
+      />
+
+      {/* AI Prediction */}
+      <Route
+        path="/ai-prediction"
+        element={<AIPrediction />}
       />
 
       {/* =========================

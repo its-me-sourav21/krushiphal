@@ -97,6 +97,14 @@ function Profile() {
             </Link>
 
             <Link
+              to="/ai-prediction"
+              className="profile-nav-item"
+            >
+              <span>🤖</span>
+              AI Prediction
+            </Link>
+
+            <Link
               to="/reports"
               className="profile-nav-item"
             >

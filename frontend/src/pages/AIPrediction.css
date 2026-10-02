@@ -1,0 +1,935 @@
+* {
+  box-sizing: border-box;
+}
+
+.ai-prediction-layout {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 88% 0%,
+      rgba(113, 185, 152, 0.14),
+      transparent 28%
+    ),
+    #f3f8f5;
+  color: #18352b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.ai-prediction-sidebar {
+  width: 267px;
+  height: 100vh;
+  background: #064b3b;
+  padding: 10px 12px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.ai-prediction-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  padding: 0 2px;
+  text-decoration: none;
+}
+
+.ai-prediction-brand-logo {
+  width: 62px;
+  height: 62px;
+  border-radius: 17px;
+  background: #2f7d64;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  flex-shrink: 0;
+}
+
+.ai-prediction-brand h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 750;
+  line-height: 1.1;
+}
+
+.ai-prediction-brand p {
+  margin: 4px 0 0;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.25;
+  max-width: 150px;
+}
+
+.ai-prediction-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ai-prediction-nav-link {
+  min-height: 58px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 450;
+  transition: 0.2s ease;
+}
+
+.ai-prediction-nav-link span {
+  width: 25px;
+  min-width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+}
+
+.ai-prediction-nav-link:hover,
+.ai-prediction-nav-link.active {
+  background: #2d7d62;
+}
+
+.ai-prediction-logout {
+  min-height: 58px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.ai-prediction-logout:hover {
+  background: #2d7d62;
+}
+
+.ai-prediction-logout span {
+  width: 24px;
+  font-size: 25px;
+  text-align: center;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.ai-prediction-main {
+  margin-left: 267px;
+  min-height: 100vh;
+  padding: 22px 30px 35px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.ai-prediction-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.ai-prediction-label {
+  margin: 0 0 6px;
+  color: #3c8c70;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.ai-prediction-header h1 {
+  margin: 0;
+  color: #173f33;
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.ai-prediction-header p:last-child {
+  margin: 7px 0 0;
+  color: #7a8d86;
+  font-size: 13px;
+}
+
+.prediction-history-button {
+  min-height: 45px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cfe0d9;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #286651;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.ai-prediction-hero {
+  min-height: 255px;
+  padding: 35px 42px;
+  border-radius: 22px;
+  background:
+    linear-gradient(
+      110deg,
+      #0c604a 0%,
+      #2c8567 64%,
+      #55a37f 100%
+    );
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(24, 79, 59, 0.12);
+}
+
+.ai-hero-content {
+  max-width: 680px;
+}
+
+.ai-hero-content > span {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  opacity: 0.86;
+}
+
+.ai-hero-content h2 {
+  margin: 9px 0;
+  font-size: 34px;
+  line-height: 1.16;
+}
+
+.ai-hero-content p {
+  margin: 0;
+  max-width: 590px;
+  color: #e3f3ed;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ai-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.ai-hero-points span {
+  padding: 8px 11px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 10px;
+}
+
+.ai-hero-visual {
+  width: 250px;
+  height: 210px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.ai-hero-circle {
+  width: 190px;
+  height: 190px;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.09);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  padding: 30px;
+}
+
+.ai-hero-circle span {
+  font-size: 40px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.ai-prediction-card,
+.ai-result-card,
+.ai-summary-card,
+.ai-impact-card {
+  background: #ffffff;
+  border: 1px solid #dfeae5;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(27, 70, 52, 0.04);
+}
+
+.ai-prediction-card {
+  margin-top: 22px;
+  padding: 24px;
+}
+
+.ai-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.ai-section-heading span {
+  color: #4c9276;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.ai-section-heading h2 {
+  margin: 5px 0 0;
+  color: #173c2f;
+  font-size: 21px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.ai-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.ai-form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #3b5e52;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ai-form-group select {
+  width: 100%;
+  height: 46px;
+  padding: 0 13px;
+  border: 1px solid #d6e4de;
+  border-radius: 10px;
+  background: #f9fcfa;
+  color: #31584b;
+  outline: none;
+  font-size: 13px;
+}
+
+.ai-form-group select:focus {
+  border-color: #2d7d62;
+  box-shadow: 0 0 0 3px rgba(45, 125, 98, 0.08);
+}
+
+.ai-form-group select:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.ai-predict-button {
+  min-height: 48px;
+  margin-top: 20px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 10px;
+  background: #2d7d62;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.ai-predict-button:hover {
+  background: #246a53;
+}
+
+.ai-predict-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.ai-error-message {
+  margin-top: 16px;
+  padding: 13px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: #fff2f0;
+  border: 1px solid #f0d0cb;
+}
+
+.ai-error-message span {
+  font-size: 17px;
+}
+
+.ai-error-message p {
+  margin: 0;
+  color: #9f4f47;
+  font-size: 12px;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.ai-loading-box {
+  margin-top: 16px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 11px;
+  background: #eff8f3;
+  border: 1px solid #d7ebe0;
+}
+
+.ai-loader {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #d4e9df;
+  border-top-color: #2d7d62;
+  border-radius: 50%;
+  animation: ai-spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+.ai-loading-box strong {
+  color: #285f4b;
+  font-size: 12px;
+}
+
+.ai-loading-box p {
+  margin: 4px 0 0;
+  color: #789087;
+  font-size: 10px;
+}
+
+@keyframes ai-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   RESULT
+========================= */
+
+.ai-results {
+  margin-top: 22px;
+}
+
+.ai-result-header {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.ai-result-header > div:first-child span {
+  color: #4c9276;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.ai-result-header h2 {
+  margin: 5px 0;
+  color: #173f33;
+  font-size: 24px;
+}
+
+.ai-result-header p {
+  margin: 0;
+  color: #80928b;
+  font-size: 12px;
+}
+
+.ai-period-badge {
+  padding: 8px 11px;
+  border-radius: 20px;
+  background: #eaf6ef;
+  color: #36785e;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* =========================
+   TOMORROW
+========================= */
+
+.ai-tomorrow-card {
+  padding: 22px 24px;
+  border-radius: 18px;
+  background: #0e604b;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.ai-tomorrow-card span {
+  display: block;
+  color: #bfe0d2;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+.ai-tomorrow-card h3 {
+  margin: 6px 0;
+  font-size: 18px;
+}
+
+.ai-tomorrow-card strong {
+  font-size: 34px;
+}
+
+.ai-tomorrow-card p {
+  display: inline;
+  margin-left: 6px;
+  color: #cbe3d9;
+  font-size: 12px;
+}
+
+.ai-tomorrow-side {
+  min-width: 190px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ai-tomorrow-side strong {
+  display: block;
+  margin: 4px 0 12px;
+  font-size: 14px;
+}
+
+/* =========================
+   RESULT CARDS
+========================= */
+
+.ai-result-card {
+  margin-top: 18px;
+  padding: 20px;
+}
+
+.ai-forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 9px;
+}
+
+.ai-forecast-item {
+  min-height: 105px;
+  padding: 12px 9px;
+  border-radius: 11px;
+  background: #f6faf8;
+  text-align: center;
+  border: 1px solid #e3eee9;
+}
+
+.ai-forecast-item > span {
+  display: block;
+  color: #71867d;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.ai-forecast-item strong {
+  display: block;
+  margin-top: 12px;
+  color: #176247;
+  font-size: 17px;
+}
+
+.ai-forecast-item small {
+  display: block;
+  margin-top: 4px;
+  color: #8b9994;
+  font-size: 8px;
+  line-height: 1.3;
+}
+
+/* =========================
+   CHART
+========================= */
+
+.ai-chart-placeholder {
+  height: 275px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f6faf8;
+  border: 1px solid #e2ede8;
+}
+
+.ai-chart-grid {
+  position: absolute;
+  inset: 25px;
+  background:
+    linear-gradient(#dce9e3 1px, transparent 1px),
+    linear-gradient(90deg, #dce9e3 1px, transparent 1px);
+  background-size: 100% 25%, 14.28% 100%;
+  opacity: 0.7;
+}
+
+.ai-chart-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  color: #6e8179;
+  text-align: center;
+}
+
+.ai-chart-message:first-letter {
+  font-size: 26px;
+}
+
+.ai-chart-message strong {
+  color: #31584b;
+  font-size: 13px;
+}
+
+.ai-chart-message span {
+  max-width: 320px;
+  font-size: 10px;
+}
+
+/* =========================
+   WEATHER
+========================= */
+
+.ai-weather-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 9px;
+}
+
+.ai-weather-item {
+  padding: 12px 10px;
+  border-radius: 11px;
+  background: #f7faf8;
+  border: 1px solid #e2ede8;
+}
+
+.ai-weather-item strong {
+  display: block;
+  margin-bottom: 9px;
+  color: #31584b;
+  font-size: 11px;
+}
+
+.ai-weather-item span {
+  display: block;
+  margin-top: 6px;
+  color: #758a81;
+  font-size: 9px;
+}
+
+.ai-empty-result {
+  padding: 18px;
+  text-align: center;
+  border-radius: 10px;
+  background: #f7faf8;
+  color: #7c8e87;
+  font-size: 11px;
+}
+
+/* =========================
+   IMPACT
+========================= */
+
+.ai-impact-card {
+  margin-top: 18px;
+  padding: 20px;
+  background: #f5f9ef;
+  border-color: #dce9cf;
+}
+
+.ai-impact-card > div:first-child span {
+  color: #758d42;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.ai-impact-card h2 {
+  margin: 5px 0 16px;
+  color: #4e5a35;
+  font-size: 19px;
+}
+
+.ai-impact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ai-impact-grid > div {
+  padding: 14px;
+  border-radius: 11px;
+  background: #ffffff;
+  border: 1px solid #e4ebda;
+}
+
+.ai-impact-grid strong {
+  color: #4b6337;
+  font-size: 12px;
+}
+
+.ai-impact-grid p {
+  margin: 6px 0 0;
+  color: #74806b;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* =========================
+   SUMMARY
+========================= */
+
+.ai-summary-card {
+  margin-top: 18px;
+  padding: 20px;
+}
+
+.ai-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.ai-summary-grid > div {
+  min-height: 78px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f7faf8;
+  border: 1px solid #e2ede8;
+}
+
+.ai-summary-grid span {
+  display: block;
+  color: #8a9b94;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.ai-summary-grid strong {
+  display: block;
+  margin-top: 8px;
+  color: #31584b;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* =========================
+   INSIGHT
+========================= */
+
+.ai-farmer-insight {
+  margin-top: 20px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: 15px;
+  background: #edf7e7;
+  border: 1px solid #dceccf;
+}
+
+.ai-insight-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #dcefc7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  flex-shrink: 0;
+}
+
+.ai-farmer-insight span {
+  color: #708a39;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.ai-farmer-insight h2 {
+  margin: 4px 0;
+  color: #315f38;
+  font-size: 17px;
+}
+
+.ai-farmer-insight p {
+  margin: 0;
+  color: #6d7f6e;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.ai-prediction-footer {
+  padding: 24px 0 5px;
+  color: #879890;
+  text-align: center;
+  font-size: 11px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .ai-forecast-grid,
+  .ai-weather-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .ai-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .ai-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-hero-visual {
+    display: none;
+  }
+
+  .ai-prediction-hero {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 800px) {
+  .ai-prediction-sidebar {
+    width: 78px;
+    padding: 10px 8px;
+  }
+
+  .ai-prediction-brand {
+    justify-content: center;
+  }
+
+  .ai-prediction-brand > div:last-child {
+    display: none;
+  }
+
+  .ai-prediction-brand-logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .ai-prediction-nav-link {
+    justify-content: center;
+    padding: 0;
+    gap: 0;
+    font-size: 0;
+  }
+
+  .ai-prediction-nav-link span {
+    font-size: 21px;
+  }
+
+  .ai-prediction-logout {
+    justify-content: center;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .ai-prediction-main {
+    margin-left: 78px;
+    padding: 18px;
+  }
+
+  .ai-forecast-grid,
+  .ai-weather-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ai-tomorrow-card {
+    flex-direction: column;
+  }
+
+  .ai-tomorrow-side {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .ai-prediction-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ai-prediction-hero {
+    padding: 24px 20px;
+  }
+
+  .ai-hero-content h2 {
+    font-size: 27px;
+  }
+
+  .ai-prediction-card,
+  .ai-result-card,
+  .ai-summary-card,
+  .ai-impact-card {
+    padding: 16px;
+  }
+
+  .ai-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-forecast-grid,
+  .ai-weather-grid {
+    grid-template-columns: 1fr;
+  }
+}

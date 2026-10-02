@@ -108,6 +108,14 @@ function Advisory() {
             </Link>
 
             <Link
+              to="/ai-prediction"
+              className="advisory-nav-link"
+            >
+              <span>🤖</span>
+              AI Prediction
+            </Link>
+
+            <Link
               to="/reports"
               className="advisory-nav-link"
             >

@@ -93,6 +93,14 @@ function Marketplace() {
             </Link>
 
             <Link
+              to="/ai-prediction"
+              className="marketplace-nav-link"
+            >
+              <span>🤖</span>
+              AI Prediction
+            </Link>
+
+            <Link
               to="/reports"
               className="marketplace-nav-link"
             >

@@ -111,6 +111,15 @@ function MyCrops() {
 
 
             <Link
+              to="/ai-prediction"
+              className="my-crops-nav-link"
+            >
+              <span>🤖</span>
+              AI Prediction
+            </Link>
+
+
+            <Link
               to="/reports"
               className="my-crops-nav-link"
             >

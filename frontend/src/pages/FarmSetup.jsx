@@ -77,6 +77,14 @@ function FarmSetup() {
             </Link>
 
             <Link
+              to="/ai-prediction"
+              className="farm-nav-item"
+            >
+              <span>🤖</span>
+              AI Prediction
+            </Link>
+
+            <Link
               to="/reports"
               className="farm-nav-item"
             >

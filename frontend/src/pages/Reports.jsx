@@ -91,6 +91,14 @@ function Reports() {
             </Link>
 
             <Link
+              to="/ai-prediction"
+              className="reports-nav-link"
+            >
+              <span>🤖</span>
+              AI Prediction
+            </Link>
+
+            <Link
               to="/reports"
               className="reports-nav-link active"
             >
