@@ -38,13 +38,13 @@ function Reports() {
 
       {/* ================= SIDEBAR ================= */}
 
-      <aside className="reports-sidebar">
+      <aside className="dashboard-sidebar">
 
         <div>
 
-          <div className="reports-brand">
+          <div className="dashboard-brand">
 
-            <div className="reports-brand-logo">
+            <div className="dashboard-brand-logo">
               🌿
             </div>
 
@@ -56,11 +56,11 @@ function Reports() {
           </div>
 
 
-          <nav className="reports-sidebar-nav">
+          <nav className="dashboard-sidebar-nav">
 
             <Link
               to="/dashboard"
-              className="reports-nav-link"
+              className="dashboard-nav-link"
             >
               <span>⌂</span>
               Dashboard
@@ -68,7 +68,7 @@ function Reports() {
 
             <Link
               to="/farm-setup"
-              className="reports-nav-link"
+              className="dashboard-nav-link"
             >
               <span>🚜</span>
               My Farm
@@ -76,7 +76,7 @@ function Reports() {
 
             <Link
               to="/my-crops"
-              className="reports-nav-link"
+              className="dashboard-nav-link"
             >
               <span>🌱</span>
               My Crops
@@ -84,7 +84,7 @@ function Reports() {
 
             <Link
               to="/marketplace"
-              className="reports-nav-link"
+              className="dashboard-nav-link"
             >
               <span>🛒</span>
               Marketplace
@@ -92,7 +92,7 @@ function Reports() {
 
             <Link
               to="/ai-prediction"
-              className="reports-nav-link"
+              className="dashboard-nav-link"
             >
               <span>🤖</span>
               AI Prediction
@@ -100,7 +100,7 @@ function Reports() {
 
             <Link
               to="/reports"
-              className="reports-nav-link active"
+              className="dashboard-nav-link active"
             >
               <span>▥</span>
               Reports
@@ -108,7 +108,7 @@ function Reports() {
 
             <Link
               to="/advisory"
-              className="reports-nav-link"
+              className="dashboard-nav-link"
             >
               <span>💡</span>
               Advisory
@@ -116,7 +116,7 @@ function Reports() {
 
             <Link
               to="/my-profile"
-              className="reports-nav-link"
+              className="dashboard-nav-link"
             >
               <span>♙</span>
               My Profile
@@ -129,7 +129,7 @@ function Reports() {
 
         <Link
           to="/"
-          className="reports-logout"
+          className="dashboard-logout"
         >
           <span>↪</span>
           Logout
@@ -276,11 +276,13 @@ function Reports() {
                 <div className="crop-report-progress">
 
                   <div className="report-progress-bar">
+
                     <span
                       style={{
                         width: `${crop.progress}%`,
                       }}
                     ></span>
+
                   </div>
 
                   <small>
@@ -430,6 +432,7 @@ function Reports() {
           </div>
 
           <div>
+
             <span>
               SMART REPORT INSIGHT
             </span>
@@ -441,6 +444,7 @@ function Reports() {
             <p>
               Current health is moderate. Regular irrigation and crop monitoring can help maintain healthy growth.
             </p>
+
           </div>
 
         </section>

@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./BuyerOrderTracking.css";
 
 function BuyerOrderTracking() {
+  const navigate = useNavigate();
+
   return (
     <div className="buyer-order-tracking">
 
@@ -54,7 +56,7 @@ function BuyerOrderTracking() {
             </Link>
 
             <Link
-              to="/notifications"
+              to="/buyer-notifications"
               className="buyer-nav-link"
             >
               <span>🔔</span>
@@ -63,7 +65,7 @@ function BuyerOrderTracking() {
             </Link>
 
             <Link
-              to="/my-profile"
+              to="/buyer-my-profile"
               className="buyer-nav-link"
             >
               <span>♙</span>
@@ -73,7 +75,14 @@ function BuyerOrderTracking() {
           </nav>
         </div>
 
-        <Link to="/" className="buyer-logout">
+        <Link
+          to="/login"
+          className="buyer-logout"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/login");
+          }}
+        >
           <span>↪</span>
           Logout
         </Link>
@@ -115,7 +124,7 @@ function BuyerOrderTracking() {
             </Link>
 
             <Link
-              to="/my-profile"
+              to="/buyer-my-profile"
               className="buyer-profile"
             >
               <div className="buyer-avatar">

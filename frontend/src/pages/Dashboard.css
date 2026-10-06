@@ -6,7 +6,7 @@
   min-height: 100vh;
   background: #eef7f3;
   color: #123b2d;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
 /* =========================
@@ -15,6 +15,7 @@
 
 .dashboard-sidebar {
   position: fixed;
+
   top: 0;
   left: 0;
 
@@ -31,15 +32,26 @@
   justify-content: space-between;
 
   z-index: 100;
+
+  /* EXACT MARKETPLACE FONT */
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* =========================
+   BRAND
+========================= */
 
 .dashboard-brand {
   display: flex;
+
   align-items: flex-start;
+
   gap: 14px;
 
   margin-bottom: 28px;
 }
+
 
 .dashboard-brand-logo {
   width: 62px;
@@ -50,6 +62,7 @@
   background: #2f7d64;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -58,15 +71,19 @@
   flex-shrink: 0;
 }
 
+
 .dashboard-brand h2 {
   margin: 2px 0 5px;
 
   color: #ffffff;
 
   font-size: 25px;
+
   line-height: 1.1;
+
   font-weight: 750;
 }
+
 
 .dashboard-brand p {
   margin: 0;
@@ -74,17 +91,25 @@
   color: #ffffff;
 
   font-size: 13px;
+
   line-height: 1.15;
 
   max-width: 150px;
 }
 
+
+/* =========================
+   SIDEBAR NAVIGATION
+========================= */
+
 .dashboard-sidebar-nav {
   display: flex;
+
   flex-direction: column;
 
   gap: 5px;
 }
+
 
 .dashboard-nav-link {
   min-height: 58px;
@@ -92,36 +117,47 @@
   padding: 0 14px;
 
   display: flex;
+
   align-items: center;
 
   gap: 20px;
 
   color: #ffffff;
+
   text-decoration: none;
 
   border-radius: 10px;
 
   font-size: 19px;
+
   font-weight: 450;
 
   transition: background 0.2s ease;
 }
+
 
 .dashboard-nav-link span {
   width: 24px;
   min-width: 24px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   font-size: 21px;
 }
 
+
 .dashboard-nav-link:hover,
 .dashboard-nav-link.active {
   background: #2d7d62;
 }
+
+
+/* =========================
+   LOGOUT
+========================= */
 
 .dashboard-logout {
   min-height: 58px;
@@ -129,11 +165,13 @@
   padding: 0 10px;
 
   display: flex;
+
   align-items: center;
 
   gap: 20px;
 
   color: #ffffff;
+
   text-decoration: none;
 
   border-radius: 10px;
@@ -141,21 +179,23 @@
   font-size: 18px;
 }
 
+
 .dashboard-logout span {
   width: 24px;
   min-width: 24px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   font-size: 25px;
 }
 
+
 .dashboard-logout:hover {
   background: rgba(255, 255, 255, 0.08);
 }
-
 /* =========================
    MAIN
 ========================= */
@@ -838,7 +878,7 @@
 }
 
 /* =========================
-   AI PREDICTION
+   FARM OVERVIEW
 ========================= */
 
 .farm-overview-body {
@@ -859,9 +899,11 @@
   border-radius: 50%;
 
   background:
-    radial-gradient(circle at center, #ffffff 0 57%, transparent 58%),
     conic-gradient(
-      #2f7d64 0 100%
+      #ee7658 0 38%,
+      #f3c331 38% 67%,
+      #40a879 67% 90%,
+      #42a9d8 90% 100%
     );
 
   display: flex;
@@ -927,25 +969,25 @@
 }
 
 .legend-dot.tomato {
-  background: #2f7d64;
+  background: #ee7658;
 }
 
 .legend-dot.potato {
-  background: #4c9276;
+  background: #f3c331;
 }
 
 .legend-dot.onion {
-  background: #72b79a;
+  background: #40a879;
 }
 
 .legend-dot.maize {
-  background: #b7dccc;
+  background: #42a9d8;
 }
 
 .farm-map-btn {
   width: 100%;
 
-  height: 32px;
+  height: 26px;
 
   border: 1px solid #9bd7bf;
 
@@ -959,10 +1001,6 @@
   font-weight: 700;
 
   cursor: pointer;
-}
-
-.farm-map-btn:hover {
-  background: #edf7f2;
 }
 
 /* =========================

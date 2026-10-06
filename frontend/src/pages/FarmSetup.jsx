@@ -31,22 +31,23 @@ function FarmSetup() {
 
       {/* ================= SIDEBAR ================= */}
 
-      <aside className="farm-sidebar">
+      <aside className="dashboard-sidebar">
         <div>
-          <div className="farm-sidebar-brand">
-            <div className="farm-brand-logo">🌿</div>
+
+          <div className="dashboard-brand">
+            <div className="dashboard-brand-logo">🌿</div>
 
             <div>
               <h2>Krushiphal</h2>
-              <span>Smart Farming, Better Future</span>
+              <p>Smart Farming, Better Future</p>
             </div>
           </div>
 
-          <nav className="farm-sidebar-nav">
+          <nav className="dashboard-sidebar-nav">
 
             <Link
               to="/dashboard"
-              className="farm-nav-item"
+              className="dashboard-nav-link"
             >
               <span>⌂</span>
               Dashboard
@@ -54,7 +55,7 @@ function FarmSetup() {
 
             <Link
               to="/farm-setup"
-              className="farm-nav-item active"
+              className="dashboard-nav-link active"
             >
               <span>🚜</span>
               My Farm
@@ -62,7 +63,7 @@ function FarmSetup() {
 
             <Link
               to="/my-crops"
-              className="farm-nav-item"
+              className="dashboard-nav-link"
             >
               <span>🌱</span>
               My Crops
@@ -70,7 +71,7 @@ function FarmSetup() {
 
             <Link
               to="/marketplace"
-              className="farm-nav-item"
+              className="dashboard-nav-link"
             >
               <span>🛒</span>
               Marketplace
@@ -78,7 +79,7 @@ function FarmSetup() {
 
             <Link
               to="/ai-prediction"
-              className="farm-nav-item"
+              className="dashboard-nav-link"
             >
               <span>🤖</span>
               AI Prediction
@@ -86,7 +87,7 @@ function FarmSetup() {
 
             <Link
               to="/reports"
-              className="farm-nav-item"
+              className="dashboard-nav-link"
             >
               <span>▥</span>
               Reports
@@ -94,7 +95,7 @@ function FarmSetup() {
 
             <Link
               to="/advisory"
-              className="farm-nav-item"
+              className="dashboard-nav-link"
             >
               <span>💡</span>
               Advisory
@@ -102,7 +103,7 @@ function FarmSetup() {
 
             <Link
               to="/my-profile"
-              className="farm-nav-item"
+              className="dashboard-nav-link"
             >
               <span>♙</span>
               My Profile
@@ -113,11 +114,12 @@ function FarmSetup() {
 
         <Link
           to="/"
-          className="farm-logout"
+          className="dashboard-logout"
         >
           <span>↪</span>
           Logout
         </Link>
+
       </aside>
 
       {/* ================= MAIN ================= */}
@@ -224,6 +226,7 @@ function FarmSetup() {
                   value={formData.areaUnit}
                   onChange={handleChange}
                 >
+
                   <option value="Acres">
                     Acres
                   </option>
@@ -235,6 +238,7 @@ function FarmSetup() {
                   <option value="Bigha">
                     Bigha
                   </option>
+
                 </select>
 
               </div>
@@ -263,6 +267,7 @@ function FarmSetup() {
                   onChange={handleChange}
                   required
                 >
+
                   <option value="">
                     Select Soil Type
                   </option>
@@ -290,6 +295,7 @@ function FarmSetup() {
                   <option value="Clay Soil">
                     Clay Soil
                   </option>
+
                 </select>
 
               </div>
@@ -304,6 +310,7 @@ function FarmSetup() {
                   onChange={handleChange}
                   required
                 >
+
                   <option value="">
                     Select Irrigation
                   </option>
@@ -327,6 +334,7 @@ function FarmSetup() {
                   <option value="Sprinkler">
                     Sprinkler
                   </option>
+
                 </select>
 
               </div>
@@ -341,6 +349,7 @@ function FarmSetup() {
                   onChange={handleChange}
                   required
                 >
+
                   <option value="">
                     Select Main Crop
                   </option>
@@ -376,6 +385,7 @@ function FarmSetup() {
                   <option value="Other">
                     Other
                   </option>
+
                 </select>
 
               </div>

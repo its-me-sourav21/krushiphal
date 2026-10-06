@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./BuyerDashboard.css";
 
 function BuyerDashboard() {
+  const navigate = useNavigate();
+
   return (
     <div className="buyer-dashboard">
 
@@ -71,7 +73,15 @@ function BuyerDashboard() {
           </nav>
         </div>
 
-        <Link to="/" className="buyer-logout">
+        {/* LOGOUT */}
+        <Link
+          to="/login"
+          className="buyer-logout"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/login");
+          }}
+        >
           <span>↪</span>
           Logout
         </Link>

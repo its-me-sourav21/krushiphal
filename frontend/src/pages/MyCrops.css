@@ -14,160 +14,120 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 /* =========================
    SIDEBAR
-   EXACT DASHBOARD STYLE
+   EXACT DASHBOARD MASTER STYLE
 ========================= */
 
-.my-crops-sidebar {
+.dashboard-sidebar {
   position: fixed;
   top: 0;
   left: 0;
-
   width: 267px;
   height: 100vh;
-
   background: #064b3b;
-  color: #ffffff;
-
+  color: white;
   padding: 10px 12px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   z-index: 100;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.my-crops-brand {
+.dashboard-brand {
   display: flex;
   align-items: flex-start;
-
   gap: 14px;
-
   margin-bottom: 28px;
 }
 
-.my-crops-brand-logo {
+.dashboard-brand-logo {
   width: 62px;
   height: 62px;
-
   border-radius: 17px;
-
   background: #2f7d64;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 34px;
-
   flex-shrink: 0;
 }
 
-.my-crops-brand h2 {
+.dashboard-brand h2 {
   margin: 2px 0 5px;
-
   color: #ffffff;
-
   font-size: 25px;
   line-height: 1.1;
   font-weight: 750;
 }
 
-.my-crops-brand p {
+.dashboard-brand p {
   margin: 0;
-
   color: #ffffff;
-
   font-size: 13px;
   line-height: 1.15;
-
   max-width: 150px;
 }
 
-.my-crops-sidebar-nav {
+.dashboard-sidebar-nav {
   display: flex;
   flex-direction: column;
-
   gap: 5px;
 }
 
-.my-crops-nav-link {
+.dashboard-nav-link {
   min-height: 58px;
-
   padding: 0 14px;
-
   display: flex;
   align-items: center;
-
   gap: 20px;
-
   color: #ffffff;
   text-decoration: none;
-
   border-radius: 10px;
-
   font-size: 19px;
   font-weight: 450;
-
   transition: background 0.2s ease;
-
-  cursor: pointer;
 }
 
-.my-crops-nav-link span {
+.dashboard-nav-link span {
   width: 24px;
   min-width: 24px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 21px;
 }
 
-.my-crops-nav-link:hover,
-.my-crops-nav-link.active {
+.dashboard-nav-link:hover,
+.dashboard-nav-link.active {
   background: #2d7d62;
 }
 
-.my-crops-logout {
+.dashboard-logout {
   min-height: 58px;
-
   padding: 0 10px;
-
   display: flex;
   align-items: center;
-
   gap: 20px;
-
   color: #ffffff;
   text-decoration: none;
-
   border-radius: 10px;
-
   font-size: 18px;
-
-  transition: background 0.2s ease;
 }
 
-.my-crops-logout span {
+.dashboard-logout span {
   width: 24px;
   min-width: 24px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 25px;
 }
 
-.my-crops-logout:hover {
+.dashboard-logout:hover {
   background: rgba(255, 255, 255, 0.08);
 }
-
 
 /* =========================
    MAIN
@@ -190,7 +150,6 @@
     ),
     #f1f8f5;
 }
-
 
 /* =========================
    HEADER
@@ -254,7 +213,6 @@
 .add-crop-btn:hover {
   background: #1e674f;
 }
-
 
 /* =========================
    SUMMARY
@@ -322,7 +280,6 @@
   font-size: 18px;
 }
 
-
 /* =========================
    MAIN CARD
 ========================= */
@@ -376,7 +333,6 @@
   font-size: 10px;
 }
 
-
 /* =========================
    CROP GRID
 ========================= */
@@ -388,7 +344,6 @@
 
   gap: 15px;
 }
-
 
 /* =========================
    CROP CARD
@@ -411,7 +366,6 @@
 
   box-shadow: 0 8px 22px rgba(18, 59, 45, 0.08);
 }
-
 
 /* =========================
    CROP IMAGE
@@ -458,7 +412,6 @@
   color: #c88900;
 }
 
-
 /* =========================
    CROP CONTENT
 ========================= */
@@ -500,7 +453,6 @@
 
   white-space: nowrap;
 }
-
 
 /* =========================
    PROGRESS
@@ -551,7 +503,6 @@
   background: #28a879;
 }
 
-
 /* =========================
    CROP DETAILS
 ========================= */
@@ -594,7 +545,6 @@
   font-size: 9px;
 }
 
-
 /* =========================
    VIEW DETAILS
 ========================= */
@@ -624,7 +574,6 @@
   background: #247d61;
   color: #ffffff;
 }
-
 
 /* =========================
    TIP
@@ -701,7 +650,6 @@
   line-height: 1.4;
 }
 
-
 /* =========================
    RESPONSIVE
 ========================= */
@@ -722,10 +670,9 @@
 
 }
 
-
 @media (max-width: 800px) {
 
-  .my-crops-sidebar {
+  .dashboard-sidebar {
     width: 220px;
   }
 
@@ -733,11 +680,11 @@
     margin-left: 220px;
   }
 
-  .my-crops-brand h2 {
+  .dashboard-brand h2 {
     font-size: 20px;
   }
 
-  .my-crops-nav-link {
+  .dashboard-nav-link {
     font-size: 16px;
   }
 
@@ -763,10 +710,9 @@
 
 }
 
-
 @media (max-width: 600px) {
 
-  .my-crops-sidebar {
+  .dashboard-sidebar {
     width: 190px;
   }
 
@@ -776,26 +722,26 @@
     padding: 12px;
   }
 
-  .my-crops-brand {
+  .dashboard-brand {
     gap: 8px;
   }
 
-  .my-crops-brand-logo {
+  .dashboard-brand-logo {
     width: 48px;
     height: 48px;
 
     font-size: 26px;
   }
 
-  .my-crops-brand h2 {
+  .dashboard-brand h2 {
     font-size: 17px;
   }
 
-  .my-crops-brand p {
+  .dashboard-brand p {
     font-size: 9px;
   }
 
-  .my-crops-nav-link {
+  .dashboard-nav-link {
     min-height: 50px;
 
     gap: 10px;
@@ -805,7 +751,11 @@
     font-size: 14px;
   }
 
-  .my-crops-logout {
+  .dashboard-nav-link span {
+    font-size: 19px;
+  }
+
+  .dashboard-logout {
     min-height: 50px;
 
     gap: 10px;
@@ -815,7 +765,7 @@
     font-size: 14px;
   }
 
-  .my-crops-logout span {
+  .dashboard-logout span {
     font-size: 21px;
   }
 

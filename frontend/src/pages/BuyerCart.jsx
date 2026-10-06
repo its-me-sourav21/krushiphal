@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./BuyerCart.css";
 
 function BuyerCart() {
+  const navigate = useNavigate();
+
   const cartItems = [
     {
       id: 1,
@@ -94,20 +96,33 @@ function BuyerCart() {
               My Orders
             </Link>
 
-            <Link to="/notifications" className="dashboard-nav-link">
+            <Link
+              to="/buyer-notifications"
+              className="dashboard-nav-link"
+            >
               <span>🔔</span>
               Notifications
               <b className="nav-badge">3</b>
             </Link>
 
-            <Link to="/my-profile" className="dashboard-nav-link">
+            <Link
+              to="/buyer-my-profile"
+              className="dashboard-nav-link"
+            >
               <span>♙</span>
               My Profile
             </Link>
           </nav>
         </div>
 
-        <Link to="/" className="dashboard-logout">
+        <Link
+          to="/login"
+          className="dashboard-logout"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/login");
+          }}
+        >
           <span>↪</span>
           Logout
         </Link>

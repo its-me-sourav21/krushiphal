@@ -1,12 +1,12 @@
 /* =========================================================
-   BUYER PAYMENT PAGE
+   CASH PAYMENT PAGE
 ========================================================= */
 
 * {
   box-sizing: border-box;
 }
 
-.buyer-payment-layout {
+.cash-payment-layout {
   min-height: 100vh;
   background: #f1f8f5;
   color: #24483d;
@@ -14,8 +14,8 @@
 
 
 /* =========================================================
-   BUYER SIDEBAR
-   Existing Buyer Dashboard sidebar - DO NOT CHANGE
+   SIDEBAR
+   EXACT SAME AS UPI PAYMENT
 ========================================================= */
 
 .dashboard-sidebar {
@@ -105,10 +105,6 @@
   background: #2d7d62;
 }
 
-.dashboard-nav-link.active {
-  background: #2d7d62;
-}
-
 .dashboard-logout {
   min-height: 58px;
   padding: 0 10px;
@@ -134,11 +130,6 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
-
-/* =========================================================
-   BADGES
-========================================================= */
-
 .nav-badge {
   margin-left: auto;
   min-width: 22px;
@@ -157,36 +148,31 @@
 
 /* =========================================================
    MAIN
+   SAME BASIC SPACING AS UPI
 ========================================================= */
 
-.buyer-payment-main {
+.cash-payment-main {
   margin-left: 267px;
   width: calc(100% - 267px);
   min-height: 100vh;
-  padding: 28px 30px 35px;
-  background:
-    radial-gradient(
-      circle at 90% 5%,
-      rgba(63, 143, 113, 0.10),
-      transparent 30%
-    ),
-    #f1f8f5;
+  padding: 30px;
+  background: #f1f8f5;
 }
 
 
 /* =========================================================
-   TOP SECTION
+   HEADER
 ========================================================= */
 
-.buyer-payment-top {
+.cash-payment-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
-  margin-bottom: 24px;
+  gap: 20px;
+  margin-bottom: 25px;
 }
 
-.payment-page-label {
+.cash-page-label {
   margin: 0 0 7px;
   color: #3c8c70;
   font-size: 11px;
@@ -194,7 +180,7 @@
   letter-spacing: 1.6px;
 }
 
-.buyer-payment-top h1 {
+.cash-payment-header h1 {
   margin: 0;
   color: #173f33;
   font-size: 36px;
@@ -202,13 +188,13 @@
   font-weight: 800;
 }
 
-.buyer-payment-top > div > p:last-child {
+.cash-page-description {
   margin: 7px 0 0;
   color: #82938d;
   font-size: 14px;
 }
 
-.payment-back-btn {
+.cash-back-btn {
   min-height: 44px;
   padding: 0 17px;
   display: inline-flex;
@@ -224,29 +210,30 @@
   white-space: nowrap;
 }
 
-.payment-back-btn:hover {
+.cash-back-btn:hover {
   background: #eef8f3;
   border-color: #2d7d62;
 }
 
 
 /* =========================================================
-   MAIN CONTENT GRID
+   CONTENT
+   SAME GRID SPACING AS UPI
 ========================================================= */
 
-.buyer-payment-content {
+.cash-payment-content {
   display: grid;
-  grid-template-columns: minmax(0, 1.65fr) minmax(300px, 0.9fr);
+  grid-template-columns: minmax(0, 1.55fr) minmax(310px, 0.85fr);
   gap: 22px;
   align-items: start;
 }
 
 
 /* =========================================================
-   PAYMENT FORM CARD
+   CASH FORM CARD
 ========================================================= */
 
-.payment-form-card {
+.cash-form-card {
   min-width: 0;
   padding: 26px;
   background: #ffffff;
@@ -255,193 +242,237 @@
   box-shadow: 0 8px 25px rgba(38, 82, 68, 0.07);
 }
 
-.payment-card-header {
+.cash-form-header {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 23px;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 25px;
 }
 
-.payment-card-header h2 {
+.cash-header-icon {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 14px;
+  background: #eef8f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.cash-form-header h2 {
   margin: 0;
   color: #173f33;
   font-size: 22px;
   font-weight: 800;
 }
 
-.payment-card-header p {
-  margin: 6px 0 0;
+.cash-form-header p {
+  margin: 5px 0 0;
   color: #82938d;
   font-size: 12px;
 }
 
-.secure-payment-badge {
-  padding: 7px 11px;
-  border-radius: 20px;
-  background: #edf7e7;
-  color: #397129;
-  font-size: 11px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
 
 /* =========================================================
-   PAYMENT METHODS
+   SELECTED PAYMENT METHOD
 ========================================================= */
 
-.payment-methods {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-bottom: 25px;
-}
-
-.payment-method {
-  min-height: 75px;
-  width: 100%;
-  padding: 12px;
+.cash-selected-method {
   display: flex;
   align-items: center;
-  gap: 11px;
-  text-align: left;
-  background: #f8fbfa;
-  border: 1px solid #dce9e4;
+  gap: 14px;
+  margin-top: 0;
+  padding: 14px;
+  border: 1px solid #b9daca;
   border-radius: 12px;
-  cursor: pointer;
-  color: #24483d;
-  font-family: inherit;
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  background: #f2faf6;
 }
 
-.payment-method:hover {
-  background: #f1f8f5;
-  border-color: #2d7d62;
-}
-
-.payment-method:focus-visible {
-  outline: 2px solid #2d7d62;
-  outline-offset: 2px;
-}
-
-.payment-method.active {
-  background: #eef8f3;
-  border: 1.5px solid #2d7d62;
-  box-shadow: 0 4px 12px rgba(45, 125, 98, 0.08);
-}
-
-.payment-method > span {
-  width: 34px;
-  min-width: 34px;
-  height: 34px;
+.cash-method-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: #dcefe5;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 9px;
-  background: #ffffff;
-  font-size: 19px;
-}
-
-.payment-method div {
-  min-width: 0;
-}
-
-.payment-method strong {
-  display: block;
-  color: #29483d;
-  font-size: 13px;
-  line-height: 1.2;
-}
-
-.payment-method small {
-  display: block;
-  margin-top: 4px;
-  color: #82938d;
-  font-size: 10px;
-  line-height: 1.25;
-}
-
-
-/* =========================================================
-   INPUTS
-========================================================= */
-
-.payment-input-group {
-  margin-bottom: 17px;
-}
-
-.payment-input-group label {
-  display: block;
-  margin-bottom: 7px;
-  color: #38584c;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.payment-input-group input {
-  width: 100%;
-  min-height: 45px;
-  padding: 0 13px;
-  border: 1px solid #dce9e4;
-  border-radius: 10px;
-  background: #ffffff;
-  color: #24483d;
-  font-family: inherit;
-  font-size: 13px;
-  outline: none;
-}
-
-.payment-input-group input::placeholder {
-  color: #a0ada8;
-}
-
-.payment-input-group input:focus {
-  border-color: #2d7d62;
-  box-shadow: 0 0 0 3px rgba(45, 125, 98, 0.08);
-}
-
-.payment-input-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-
-/* =========================================================
-   SECURITY NOTE
-========================================================= */
-
-.payment-security-note {
-  margin-top: 8px;
-  padding: 14px;
-  display: flex;
-  align-items: flex-start;
-  gap: 11px;
-  border: 1px solid #dceccf;
-  border-radius: 12px;
-  background: #edf7e7;
-}
-
-.payment-security-note > span {
-  font-size: 19px;
+  font-size: 22px;
   flex-shrink: 0;
 }
 
-.payment-security-note strong {
+.cash-selected-method > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cash-selected-method span:not(.cash-check) {
+  color: #75857d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.cash-selected-method strong {
+  color: #234c3d;
+  font-size: 13px;
+}
+
+.cash-check {
+  margin-left: auto;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #2d7d62;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   INFO BOX
+========================================================= */
+
+.cash-info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #f7faf8;
+  border: 1px solid #e3ece7;
+}
+
+.cash-info-box > span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.cash-info-box strong {
   display: block;
-  color: #315f38;
+  color: #31584b;
   font-size: 12px;
 }
 
-.payment-security-note p {
+.cash-info-box p {
   margin: 4px 0 0;
-  color: #6e806f;
+  color: #74827c;
   font-size: 10px;
-  line-height: 1.45;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   DELIVERY NOTE
+========================================================= */
+
+.cash-delivery-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #fffaf0;
+  border: 1px solid #eee1bd;
+}
+
+.cash-delivery-note > span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.cash-delivery-note strong {
+  display: block;
+  color: #65502b;
+  font-size: 12px;
+}
+
+.cash-delivery-note p {
+  margin: 4px 0 0;
+  color: #817456;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   SECURITY BOX
+========================================================= */
+
+.cash-security-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #f3f8f6;
+  border: 1px solid #dce9e3;
+}
+
+.cash-security-box > span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.cash-security-box strong {
+  display: block;
+  color: #31584b;
+  font-size: 12px;
+}
+
+.cash-security-box p {
+  margin: 4px 0 0;
+  color: #74827c;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   PLACE ORDER BUTTON
+========================================================= */
+
+.cash-place-order-btn {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 11px;
+  background: #064b3b;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.cash-place-order-btn:hover {
+  background: #0a624d;
+}
+
+.cash-change-payment-link {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #286651;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.cash-change-payment-link:hover {
+  color: #064b3b;
 }
 
 
@@ -449,7 +480,7 @@
    ORDER SUMMARY
 ========================================================= */
 
-.payment-summary-card {
+.cash-summary-card {
   min-width: 0;
   padding: 23px;
   background: #ffffff;
@@ -458,22 +489,22 @@
   box-shadow: 0 8px 25px rgba(38, 82, 68, 0.07);
 }
 
-.payment-summary-header {
+.cash-summary-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 18px;
+  margin-bottom: 17px;
 }
 
-.payment-summary-header h2 {
+.cash-summary-header h2 {
   margin: 0;
   color: #173f33;
   font-size: 21px;
   font-weight: 800;
 }
 
-.payment-summary-header span {
+.cash-summary-header span {
   padding: 5px 9px;
   border-radius: 15px;
   background: #edf7e7;
@@ -487,8 +518,7 @@
    SUMMARY ITEMS
 ========================================================= */
 
-.payment-summary-item {
-  min-width: 0;
+.cash-summary-item {
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr) auto;
   align-items: center;
@@ -496,46 +526,35 @@
   padding: 11px 0;
 }
 
-.summary-item-icon {
+.cash-product-icon {
   width: 42px;
   height: 42px;
   border-radius: 11px;
+  background: #f5f8f6;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 21px;
 }
 
-.summary-item-icon.tomato {
-  background: #fff0ed;
-}
-
-.summary-item-icon.potato {
-  background: #f7f0e5;
-}
-
-.summary-item-icon.onion {
-  background: #f1eef8;
-}
-
-.summary-item-info {
+.cash-product-info {
   min-width: 0;
 }
 
-.summary-item-info strong {
+.cash-product-info strong {
   display: block;
   color: #38584c;
   font-size: 12px;
 }
 
-.summary-item-info span {
+.cash-product-info span {
   display: block;
   margin-top: 3px;
   color: #899791;
   font-size: 10px;
 }
 
-.payment-summary-item > strong {
+.cash-summary-item > strong {
   color: #315f4f;
   font-size: 12px;
   white-space: nowrap;
@@ -543,90 +562,93 @@
 
 
 /* =========================================================
-   SUMMARY TOTALS
+   TOTALS
 ========================================================= */
 
-.payment-summary-divider {
+.cash-summary-divider {
   height: 1px;
   margin: 10px 0 7px;
   background: #e8efec;
 }
 
-.payment-summary-row {
+.cash-summary-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
   padding: 8px 0;
 }
 
-.payment-summary-row span {
+.cash-summary-row span {
   color: #71837c;
   font-size: 12px;
 }
 
-.payment-summary-row strong {
+.cash-summary-row strong {
   color: #38584c;
   font-size: 12px;
 }
 
-.payment-total-row {
+.cash-total-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
   padding: 15px 0 18px;
 }
 
-.payment-total-row span {
+.cash-total-row span {
   color: #29483d;
   font-size: 14px;
   font-weight: 700;
 }
 
-.payment-total-row strong {
+.cash-total-row strong {
   color: #176247;
   font-size: 24px;
 }
 
 
 /* =========================================================
-   PAY NOW
+   PAYMENT METHOD DISPLAY
 ========================================================= */
 
-.pay-now-btn {
-  min-height: 48px;
-  padding: 0 15px;
+.cash-payment-method-display {
+  margin-top: 5px;
+  padding: 12px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
   border-radius: 11px;
-  background: #064b3b;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  transition: background 0.2s ease;
+  background: #eef8f3;
 }
 
-.pay-now-btn:hover {
-  background: #0a624d;
-}
-
-.continue-shopping-link {
-  min-height: 42px;
+.cash-payment-method-display > span {
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 8px;
-  color: #286651;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 700;
+  border-radius: 9px;
+  background: #ffffff;
+  font-size: 17px;
 }
 
-.continue-shopping-link:hover {
-  color: #064b3b;
+.cash-payment-method-display div {
+  min-width: 0;
+}
+
+.cash-payment-method-display small {
+  display: block;
+  color: #6f857c;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.cash-payment-method-display strong {
+  display: block;
+  margin-top: 2px;
+  color: #286651;
+  font-size: 11px;
 }
 
 
@@ -634,7 +656,7 @@
    DELIVERY ADDRESS
 ========================================================= */
 
-.payment-delivery-card {
+.cash-delivery-address {
   margin-top: 22px;
   padding: 17px 20px;
   display: grid;
@@ -647,7 +669,7 @@
   box-shadow: 0 7px 20px rgba(38, 82, 68, 0.05);
 }
 
-.delivery-icon {
+.cash-address-icon {
   width: 44px;
   height: 44px;
   border-radius: 12px;
@@ -658,11 +680,11 @@
   font-size: 20px;
 }
 
-.payment-delivery-card > div:nth-child(2) {
+.cash-delivery-address > div:nth-child(2) {
   min-width: 0;
 }
 
-.payment-delivery-card > div:nth-child(2) > span {
+.cash-delivery-address > div:nth-child(2) > span {
   display: block;
   margin-bottom: 4px;
   color: #3c8c70;
@@ -671,20 +693,20 @@
   letter-spacing: 1.3px;
 }
 
-.payment-delivery-card strong {
+.cash-delivery-address > div:nth-child(2) strong {
   display: block;
   color: #38584c;
   font-size: 13px;
 }
 
-.payment-delivery-card p {
+.cash-delivery-address > div:nth-child(2) p {
   margin: 3px 0 0;
   color: #87958f;
   font-size: 10px;
   line-height: 1.4;
 }
 
-.change-address-btn {
+.cash-change-address-btn {
   min-height: 37px;
   padding: 0 14px;
   border: 1px solid #dce9e4;
@@ -697,7 +719,7 @@
   font-weight: 700;
 }
 
-.change-address-btn:hover {
+.cash-change-address-btn:hover {
   background: #eef8f3;
   border-color: #2d7d62;
 }
@@ -707,8 +729,8 @@
    FOOTER
 ========================================================= */
 
-.buyer-payment-footer {
-  padding: 25px 0 5px;
+.cash-payment-footer {
+  padding: 27px 0 5px;
   text-align: center;
   color: #82948d;
   font-size: 12px;
@@ -717,24 +739,23 @@
 
 /* =========================================================
    RESPONSIVE
+   SAME SIDEBAR BREAKPOINTS AS UPI
 ========================================================= */
 
-@media (max-width: 1100px) {
-  .buyer-payment-content {
+@media (max-width: 1050px) {
+  .cash-payment-content {
     grid-template-columns: 1fr;
-  }
-
-  .payment-summary-card {
-    width: 100%;
   }
 }
 
+
 @media (max-width: 800px) {
+
   .dashboard-sidebar {
     width: 220px;
   }
 
-  .buyer-payment-main {
+  .cash-payment-main {
     margin-left: 220px;
     width: calc(100% - 220px);
     padding: 22px 20px 30px;
@@ -747,37 +768,33 @@
   .dashboard-nav-link {
     font-size: 16px;
   }
-
-  .buyer-payment-top {
-    align-items: flex-start;
-  }
 }
 
+
 @media (max-width: 650px) {
-  .payment-methods {
-    grid-template-columns: 1fr;
+
+  .cash-payment-header {
+    align-items: flex-start;
   }
 
-  .payment-method {
-    min-height: 64px;
-  }
-
-  .payment-delivery-card {
+  .cash-delivery-address {
     grid-template-columns: 44px minmax(0, 1fr);
   }
 
-  .change-address-btn {
+  .cash-change-address-btn {
     grid-column: 2;
     justify-self: start;
   }
 }
 
+
 @media (max-width: 600px) {
+
   .dashboard-sidebar {
     width: 190px;
   }
 
-  .buyer-payment-main {
+  .cash-payment-main {
     margin-left: 190px;
     width: calc(100% - 190px);
     padding: 16px 12px 25px;
@@ -808,31 +825,21 @@
     font-size: 14px;
   }
 
-  .buyer-payment-top {
+  .cash-payment-header {
     flex-direction: column;
     gap: 15px;
   }
 
-  .buyer-payment-top h1 {
+  .cash-payment-header h1 {
     font-size: 30px;
   }
 
-  .payment-back-btn {
+  .cash-back-btn {
     width: 100%;
   }
 
-  .payment-form-card,
-  .payment-summary-card {
+  .cash-form-card,
+  .cash-summary-card {
     padding: 18px;
-  }
-
-  .payment-card-header {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .payment-input-row {
-    grid-template-columns: 1fr;
-    gap: 0;
   }
 }

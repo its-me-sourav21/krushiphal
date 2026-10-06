@@ -54,13 +54,13 @@ function MyCrops() {
 
       {/* ================= SIDEBAR ================= */}
 
-      <aside className="my-crops-sidebar">
+      <aside className="dashboard-sidebar">
 
         <div>
 
-          <div className="my-crops-brand">
+          <div className="dashboard-brand">
 
-            <div className="my-crops-brand-logo">
+            <div className="dashboard-brand-logo">
               🌿
             </div>
 
@@ -72,11 +72,11 @@ function MyCrops() {
           </div>
 
 
-          <nav className="my-crops-sidebar-nav">
+          <nav className="dashboard-sidebar-nav">
 
             <Link
               to="/dashboard"
-              className="my-crops-nav-link"
+              className="dashboard-nav-link"
             >
               <span>⌂</span>
               Dashboard
@@ -85,7 +85,7 @@ function MyCrops() {
 
             <Link
               to="/farm-setup"
-              className="my-crops-nav-link"
+              className="dashboard-nav-link"
             >
               <span>🚜</span>
               My Farm
@@ -94,7 +94,7 @@ function MyCrops() {
 
             <Link
               to="/my-crops"
-              className="my-crops-nav-link active"
+              className="dashboard-nav-link active"
             >
               <span>🌱</span>
               My Crops
@@ -103,7 +103,7 @@ function MyCrops() {
 
             <Link
               to="/marketplace"
-              className="my-crops-nav-link"
+              className="dashboard-nav-link"
             >
               <span>🛒</span>
               Marketplace
@@ -112,7 +112,7 @@ function MyCrops() {
 
             <Link
               to="/ai-prediction"
-              className="my-crops-nav-link"
+              className="dashboard-nav-link"
             >
               <span>🤖</span>
               AI Prediction
@@ -121,7 +121,7 @@ function MyCrops() {
 
             <Link
               to="/reports"
-              className="my-crops-nav-link"
+              className="dashboard-nav-link"
             >
               <span>▥</span>
               Reports
@@ -130,7 +130,7 @@ function MyCrops() {
 
             <Link
               to="/advisory"
-              className="my-crops-nav-link"
+              className="dashboard-nav-link"
             >
               <span>💡</span>
               Advisory
@@ -139,7 +139,7 @@ function MyCrops() {
 
             <Link
               to="/my-profile"
-              className="my-crops-nav-link"
+              className="dashboard-nav-link"
             >
               <span>♙</span>
               My Profile
@@ -152,7 +152,7 @@ function MyCrops() {
 
         <Link
           to="/"
-          className="my-crops-logout"
+          className="dashboard-logout"
         >
           <span>↪</span>
           Logout
@@ -265,6 +265,7 @@ function MyCrops() {
           <div className="my-crops-card-header">
 
             <div>
+
               <span className="my-crops-section-label">
                 🌱 ACTIVE VEGETABLES
               </span>
@@ -276,6 +277,7 @@ function MyCrops() {
               <p>
                 Current progress and crop information.
               </p>
+
             </div>
 
           </div>
@@ -319,6 +321,7 @@ function MyCrops() {
                   <div className="my-crop-title">
 
                     <div>
+
                       <h3>
                         {crop.name}
                       </h3>
@@ -326,6 +329,7 @@ function MyCrops() {
                       <p>
                         {crop.variety}
                       </p>
+
                     </div>
 
                     <strong>
@@ -366,13 +370,28 @@ function MyCrops() {
                   <div className="my-crop-details">
 
                     <div>
-                      <span>Planted</span>
-                      <strong>{crop.planted}</strong>
+
+                      <span>
+                        Planted
+                      </span>
+
+                      <strong>
+                        {crop.planted}
+                      </strong>
+
                     </div>
 
+
                     <div>
-                      <span>Expected Harvest</span>
-                      <strong>{crop.expected}</strong>
+
+                      <span>
+                        Expected Harvest
+                      </span>
+
+                      <strong>
+                        {crop.expected}
+                      </strong>
+
                     </div>
 
                   </div>

@@ -79,7 +79,9 @@ function AIPrediction() {
       );
 
       if (!response.ok) {
-        throw new Error("Prediction service is temporarily unavailable.");
+        throw new Error(
+          "Prediction service is temporarily unavailable."
+        );
       }
 
       const data = await response.json();
@@ -108,92 +110,127 @@ function AIPrediction() {
   return (
     <div className="ai-prediction-layout">
 
-      {/* SIDEBAR */}
-      <aside className="ai-prediction-sidebar">
+      {/* ================= SIDEBAR ================= */}
+
+      <aside className="dashboard-sidebar">
+
         <div>
-          <Link to="/dashboard" className="ai-prediction-brand">
-            <div className="ai-prediction-brand-logo">🌾</div>
+
+          <div className="dashboard-brand">
+
+            <div className="dashboard-brand-logo">
+              🌿
+            </div>
 
             <div>
               <h2>Krushiphal</h2>
               <p>Smart Farming, Better Future</p>
             </div>
-          </Link>
 
-          <nav className="ai-prediction-nav">
+          </div>
 
-            <Link to="/dashboard" className="ai-prediction-nav-link">
+          <nav className="dashboard-sidebar-nav">
+
+            <Link
+              to="/dashboard"
+              className="dashboard-nav-link"
+            >
               <span>⌂</span>
               Dashboard
             </Link>
 
-            <Link to="/farm-setup" className="ai-prediction-nav-link">
-              <span>🏡</span>
+            <Link
+              to="/farm-setup"
+              className="dashboard-nav-link"
+            >
+              <span>🚜</span>
               My Farm
             </Link>
 
-            <Link to="/my-crops" className="ai-prediction-nav-link">
+            <Link
+              to="/my-crops"
+              className="dashboard-nav-link"
+            >
               <span>🌱</span>
               My Crops
             </Link>
 
-            <Link to="/add-produce" className="ai-prediction-nav-link">
-              <span>➕</span>
-              Add Produce
-            </Link>
-
-            <Link to="/marketplace" className="ai-prediction-nav-link">
-              <span>🥬</span>
+            <Link
+              to="/marketplace"
+              className="dashboard-nav-link"
+            >
+              <span>🛒</span>
               Marketplace
             </Link>
 
             <Link
               to="/ai-prediction"
-              className="ai-prediction-nav-link active"
+              className="dashboard-nav-link active"
             >
               <span>🤖</span>
               AI Prediction
             </Link>
 
-            <Link to="/reports" className="ai-prediction-nav-link">
-              <span>📊</span>
+            <Link
+              to="/reports"
+              className="dashboard-nav-link"
+            >
+              <span>▥</span>
               Reports
             </Link>
 
-            <Link to="/advisory" className="ai-prediction-nav-link">
+            <Link
+              to="/advisory"
+              className="dashboard-nav-link"
+            >
               <span>💡</span>
               Advisory
             </Link>
 
-            <Link to="/my-profile" className="ai-prediction-nav-link">
+            <Link
+              to="/my-profile"
+              className="dashboard-nav-link"
+            >
               <span>♙</span>
               My Profile
             </Link>
 
           </nav>
+
         </div>
 
-        <Link to="/login" className="ai-prediction-logout">
+        <Link
+          to="/"
+          className="dashboard-logout"
+        >
           <span>↪</span>
           Logout
         </Link>
+
       </aside>
 
-      {/* MAIN */}
+      {/* ================= MAIN ================= */}
+
       <main className="ai-prediction-main">
 
         {/* HEADER */}
+
         <header className="ai-prediction-header">
+
           <div>
+
             <p className="ai-prediction-label">
               KRUSHPHAL AI
             </p>
 
-            <h1>AI Prediction</h1>
+            <h1>
+              AI Prediction
+            </h1>
 
             <p>
               AI-powered future vegetable price predictions for farmers.
             </p>
+
           </div>
 
           <Link
@@ -202,13 +239,18 @@ function AIPrediction() {
           >
             Prediction History
           </Link>
+
         </header>
 
         {/* HERO */}
+
         <section className="ai-prediction-hero">
 
           <div className="ai-hero-content">
-            <span>SMART FARMING INSIGHT</span>
+
+            <span>
+              SMART FARMING INSIGHT
+            </span>
 
             <h2>
               Know Tomorrow’s Vegetable Price Today
@@ -220,37 +262,65 @@ function AIPrediction() {
             </p>
 
             <div className="ai-hero-points">
-              <span>🤖 AI Prediction</span>
-              <span>📈 Market Data</span>
-              <span>🌦️ Weather Forecast</span>
+
+              <span>
+                🤖 AI Prediction
+              </span>
+
+              <span>
+                📈 Market Data
+              </span>
+
+              <span>
+                🌦️ Weather Forecast
+              </span>
+
             </div>
+
           </div>
 
           <div className="ai-hero-visual">
+
             <div className="ai-hero-circle">
+
               <span>🍅</span>
               <span>🥔</span>
               <span>🧅</span>
               <span>📈</span>
+
             </div>
+
           </div>
 
         </section>
 
         {/* PREDICTION INPUT */}
+
         <section className="ai-prediction-card">
 
           <div className="ai-section-heading">
+
             <div>
-              <span>VEGETABLE PRICE PREDICTION</span>
-              <h2>Select Market Location</h2>
+
+              <span>
+                VEGETABLE PRICE PREDICTION
+              </span>
+
+              <h2>
+                Select Market Location
+              </h2>
+
             </div>
+
           </div>
 
           <div className="ai-form-grid">
 
             <div className="ai-form-group">
-              <label>District</label>
+
+              <label>
+                District
+              </label>
 
               <select
                 value={district}
@@ -261,18 +331,29 @@ function AIPrediction() {
                   setError("");
                 }}
               >
-                <option value="">Select District</option>
+
+                <option value="">
+                  Select District
+                </option>
 
                 {Object.keys(DISTRICTS).map((item) => (
-                  <option key={item} value={item}>
+                  <option
+                    key={item}
+                    value={item}
+                  >
                     {item}
                   </option>
                 ))}
+
               </select>
+
             </div>
 
             <div className="ai-form-group">
-              <label>Mandi</label>
+
+              <label>
+                Mandi
+              </label>
 
               <select
                 value={mandi}
@@ -283,18 +364,29 @@ function AIPrediction() {
                 }}
                 disabled={!district}
               >
-                <option value="">Select Mandi</option>
+
+                <option value="">
+                  Select Mandi
+                </option>
 
                 {mandiOptions.map((item) => (
-                  <option key={item} value={item}>
+                  <option
+                    key={item}
+                    value={item}
+                  >
                     {item}
                   </option>
                 ))}
+
               </select>
+
             </div>
 
             <div className="ai-form-group">
-              <label>Vegetable</label>
+
+              <label>
+                Vegetable
+              </label>
 
               <select
                 value={vegetable}
@@ -304,22 +396,37 @@ function AIPrediction() {
                   setError("");
                 }}
               >
-                <option value="">Select Vegetable</option>
+
+                <option value="">
+                  Select Vegetable
+                </option>
 
                 {VEGETABLES.map((item) => (
-                  <option key={item} value={item}>
+                  <option
+                    key={item}
+                    value={item}
+                  >
                     {item}
                   </option>
                 ))}
+
               </select>
+
             </div>
 
           </div>
 
           {error && (
             <div className="ai-error-message">
-              <span>⚠️</span>
-              <p>{error}</p>
+
+              <span>
+                ⚠️
+              </span>
+
+              <p>
+                {error}
+              </p>
+
             </div>
           )}
 
@@ -328,25 +435,35 @@ function AIPrediction() {
             onClick={handlePrediction}
             disabled={loading}
           >
-            {loading ? "Generating Prediction..." : "Predict 7 Days"}
+            {loading
+              ? "Generating Prediction..."
+              : "Predict 7 Days"}
           </button>
 
           {loading && (
             <div className="ai-loading-box">
+
               <div className="ai-loader"></div>
 
               <div>
-                <strong>{loadingStep}</strong>
+
+                <strong>
+                  {loadingStep}
+                </strong>
+
                 <p>
                   AI is analyzing market and weather data…
                 </p>
+
               </div>
+
             </div>
           )}
 
         </section>
 
         {/* RESULT */}
+
         {prediction && (
           <PredictionResult
             prediction={prediction}
@@ -354,6 +471,7 @@ function AIPrediction() {
         )}
 
         {/* FARMER INSIGHT */}
+
         <section className="ai-farmer-insight">
 
           <div className="ai-insight-icon">
@@ -361,29 +479,38 @@ function AIPrediction() {
           </div>
 
           <div>
-            <span>FARMER INSIGHT</span>
 
-            <h2>Plan with better information.</h2>
+            <span>
+              FARMER INSIGHT
+            </span>
+
+            <h2>
+              Plan with better information.
+            </h2>
 
             <p>
               Use the AI-generated forecast as an estimate
               for planning your selling decision.
             </p>
+
           </div>
 
         </section>
 
         {/* FOOTER */}
+
         <footer className="ai-prediction-footer">
           🌿 Smart farming. Better planning. Better future.
         </footer>
 
       </main>
+
     </div>
   );
 }
 
 function PredictionResult({ prediction }) {
+
   const data = prediction.data || {};
 
   const forecast =
@@ -418,16 +545,23 @@ function PredictionResult({ prediction }) {
     <section className="ai-results">
 
       {/* RESULT HEADER */}
+
       <div className="ai-result-header">
 
         <div>
-          <span>PREDICTION RESULT</span>
 
-          <h2>Vegetable Price Prediction</h2>
+          <span>
+            PREDICTION RESULT
+          </span>
+
+          <h2>
+            Vegetable Price Prediction
+          </h2>
 
           <p>
             {prediction.district} → {prediction.mandi}
           </p>
+
         </div>
 
         <div className="ai-period-badge">
@@ -437,12 +571,18 @@ function PredictionResult({ prediction }) {
       </div>
 
       {/* TOMORROW PRICE */}
+
       <div className="ai-tomorrow-card">
 
         <div>
-          <span>AI PREDICTED</span>
 
-          <h3>Tomorrow’s Expected Price</h3>
+          <span>
+            AI PREDICTED
+          </span>
+
+          <h3>
+            Tomorrow’s Expected Price
+          </h3>
 
           <strong>
             {tomorrowPrice !== null
@@ -453,40 +593,64 @@ function PredictionResult({ prediction }) {
           <p>
             / kg
           </p>
+
         </div>
 
         <div className="ai-tomorrow-side">
-          <span>Vegetable</span>
-          <strong>{prediction.vegetable}</strong>
 
-          <span>Per Quintal</span>
+          <span>
+            Vegetable
+          </span>
+
+          <strong>
+            {prediction.vegetable}
+          </strong>
+
+          <span>
+            Per Quintal
+          </span>
+
           <strong>
             {tomorrowQuintal !== null
               ? `₹${tomorrowQuintal}`
               : "—"}
           </strong>
+
         </div>
 
       </div>
 
       {/* 7 DAY FORECAST */}
+
       <div className="ai-result-card">
 
         <div className="ai-section-heading">
+
           <div>
-            <span>FORECAST</span>
-            <h2>7-Day Price Forecast</h2>
+
+            <span>
+              FORECAST
+            </span>
+
+            <h2>
+              7-Day Price Forecast
+            </h2>
+
           </div>
+
         </div>
 
         {forecast.length > 0 ? (
+
           <div className="ai-forecast-grid">
 
             {forecast.slice(0, 7).map((item, index) => (
+
               <div
                 className="ai-forecast-item"
                 key={`${item.date || index}`}
               >
+
                 <span>
                   {item.day ||
                     item.weekday ||
@@ -515,61 +679,97 @@ function PredictionResult({ prediction }) {
                       } / quintal`
                     : "—"}
                 </small>
+
               </div>
+
             ))}
 
           </div>
+
         ) : (
+
           <div className="ai-empty-result">
             Prediction data is not available in the returned response.
           </div>
+
         )}
 
       </div>
 
       {/* CHART */}
+
       <div className="ai-result-card">
 
         <div className="ai-section-heading">
+
           <div>
-            <span>PRICE TREND</span>
-            <h2>7-Day Price Trend</h2>
+
+            <span>
+              PRICE TREND
+            </span>
+
+            <h2>
+              7-Day Price Trend
+            </h2>
+
           </div>
+
         </div>
 
         <div className="ai-chart-placeholder">
+
           <div className="ai-chart-grid"></div>
 
           <div className="ai-chart-message">
+
             📈
-            <strong>Prediction trend data</strong>
+
+            <strong>
+              Prediction trend data
+            </strong>
+
             <span>
               Connect your API response fields to render
               the 7-day price line here.
             </span>
+
           </div>
+
         </div>
 
       </div>
 
       {/* WEATHER */}
+
       <div className="ai-result-card">
 
         <div className="ai-section-heading">
+
           <div>
-            <span>SUPPORTING INFORMATION</span>
-            <h2>Expected Weather Conditions</h2>
+
+            <span>
+              SUPPORTING INFORMATION
+            </span>
+
+            <h2>
+              Expected Weather Conditions
+            </h2>
+
           </div>
+
         </div>
 
         {weather.length > 0 ? (
+
           <div className="ai-weather-grid">
 
             {weather.slice(0, 7).map((item, index) => (
+
               <div
                 className="ai-weather-item"
                 key={`${item.date || index}`}
               >
+
                 <strong>
                   {item.day ||
                     item.weekday ||
@@ -582,7 +782,11 @@ function PredictionResult({ prediction }) {
                 </span>
 
                 <span>
-                  🌧️ {item.rainfall ?? item.precipitation ?? "—"} mm
+                  🌧️{" "}
+                  {item.rainfall ??
+                    item.precipitation ??
+                    "—"}{" "}
+                  mm
                 </span>
 
                 <span>
@@ -590,45 +794,71 @@ function PredictionResult({ prediction }) {
                 </span>
 
                 <span>
-                  💨 {item.wind_speed ?? item.windSpeed ?? "—"}
+                  💨{" "}
+                  {item.wind_speed ??
+                    item.windSpeed ??
+                    "—"}
                 </span>
+
               </div>
+
             ))}
 
           </div>
+
         ) : (
+
           <div className="ai-empty-result">
             Weather forecast is temporarily unavailable.
             Prediction may be affected.
           </div>
+
         )}
 
       </div>
 
       {/* WEATHER IMPACT */}
+
       <div className="ai-impact-card">
 
         <div>
-          <span>WEATHER IMPACT</span>
-          <h2>How Weather May Affect Price</h2>
+
+          <span>
+            WEATHER IMPACT
+          </span>
+
+          <h2>
+            How Weather May Affect Price
+          </h2>
+
         </div>
 
         <div className="ai-impact-grid">
 
           <div>
-            <strong>🌧️ Rainfall</strong>
+
+            <strong>
+              🌧️ Rainfall
+            </strong>
+
             <p>
               Higher rainfall may affect market arrivals
               and can influence vegetable prices.
             </p>
+
           </div>
 
           <div>
-            <strong>🌡️ Temperature</strong>
+
+            <strong>
+              🌡️ Temperature
+            </strong>
+
             <p>
               Changes in temperature can affect vegetable
               supply and quality.
             </p>
+
           </div>
 
         </div>
@@ -636,70 +866,126 @@ function PredictionResult({ prediction }) {
       </div>
 
       {/* SUMMARY */}
+
       <div className="ai-summary-card">
 
         <div className="ai-section-heading">
+
           <div>
-            <span>SUMMARY</span>
-            <h2>Prediction Summary</h2>
+
+            <span>
+              SUMMARY
+            </span>
+
+            <h2>
+              Prediction Summary
+            </h2>
+
           </div>
+
         </div>
 
         <div className="ai-summary-grid">
 
           <div>
-            <span>Vegetable</span>
-            <strong>{prediction.vegetable}</strong>
+
+            <span>
+              Vegetable
+            </span>
+
+            <strong>
+              {prediction.vegetable}
+            </strong>
+
           </div>
 
           <div>
-            <span>Mandi</span>
-            <strong>{prediction.mandi}</strong>
+
+            <span>
+              Mandi
+            </span>
+
+            <strong>
+              {prediction.mandi}
+            </strong>
+
           </div>
 
           <div>
-            <span>District</span>
-            <strong>{prediction.district}</strong>
+
+            <span>
+              District
+            </span>
+
+            <strong>
+              {prediction.district}
+            </strong>
+
           </div>
 
           <div>
-            <span>Tomorrow</span>
+
+            <span>
+              Tomorrow
+            </span>
+
             <strong>
               {tomorrowPrice !== null
                 ? `₹${tomorrowPrice}/kg`
                 : "—"}
             </strong>
+
           </div>
 
           <div>
-            <span>7-Day Average</span>
+
+            <span>
+              7-Day Average
+            </span>
+
             <strong>
               {data.average_price ??
-              data.seven_day_average ??
-              "—"}
+                data.seven_day_average ??
+                "—"}
             </strong>
+
           </div>
 
           <div>
-            <span>Highest</span>
+
+            <span>
+              Highest
+            </span>
+
             <strong>
               {data.highest_price ?? "—"}
             </strong>
+
           </div>
 
           <div>
-            <span>Lowest</span>
+
+            <span>
+              Lowest
+            </span>
+
             <strong>
               {data.lowest_price ?? "—"}
             </strong>
+
           </div>
 
           <div>
-            <span>Trend</span>
+
+            <span>
+              Trend
+            </span>
+
             <strong>
               {data.trend ||
                 "Price is expected to fluctuate over the next 7 days."}
             </strong>
+
           </div>
 
         </div>

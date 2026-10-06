@@ -46,92 +46,112 @@ function Marketplace() {
 
       {/* ================= SIDEBAR ================= */}
 
-      <aside className="marketplace-sidebar">
+      <aside className="dashboard-sidebar">
+
         <div>
 
-          <div className="marketplace-brand">
-            <div className="marketplace-brand-logo">🌿</div>
+          <div className="dashboard-brand">
+
+            <div className="dashboard-brand-logo">
+              🌿
+            </div>
 
             <div>
               <h2>Krushiphal</h2>
               <p>Smart Farming, Better Future</p>
             </div>
+
           </div>
 
-          <nav className="marketplace-sidebar-nav">
+
+          <nav className="dashboard-sidebar-nav">
 
             <Link
               to="/dashboard"
-              className="marketplace-nav-link"
+              className="dashboard-nav-link"
             >
               <span>⌂</span>
               Dashboard
             </Link>
 
+
             <Link
               to="/farm-setup"
-              className="marketplace-nav-link"
+              className="dashboard-nav-link"
             >
               <span>🚜</span>
               My Farm
             </Link>
 
+
             <Link
               to="/my-crops"
-              className="marketplace-nav-link"
+              className="dashboard-nav-link"
             >
               <span>🌱</span>
               My Crops
             </Link>
 
+
             <Link
               to="/marketplace"
-              className="marketplace-nav-link active"
+              className="dashboard-nav-link active"
             >
               <span>🛒</span>
               Marketplace
             </Link>
 
+
             <Link
               to="/ai-prediction"
-              className="marketplace-nav-link"
+              className="dashboard-nav-link"
             >
               <span>🤖</span>
               AI Prediction
             </Link>
 
+
             <Link
               to="/reports"
-              className="marketplace-nav-link"
+              className="dashboard-nav-link"
             >
               <span>▥</span>
               Reports
             </Link>
 
+
             <Link
               to="/advisory"
-              className="marketplace-nav-link"
+              className="dashboard-nav-link"
             >
               <span>💡</span>
               Advisory
             </Link>
 
+
             <Link
               to="/my-profile"
-              className="marketplace-nav-link"
+              className="dashboard-nav-link"
             >
               <span>♙</span>
               My Profile
             </Link>
 
           </nav>
+
         </div>
 
-        <Link to="/" className="marketplace-logout">
+
+        <Link
+          to="/"
+          className="dashboard-logout"
+        >
           <span>↪</span>
           Logout
         </Link>
+
       </aside>
+
 
       {/* ================= MAIN CONTENT ================= */}
 
@@ -142,16 +162,21 @@ function Marketplace() {
         <header className="marketplace-header">
 
           <div>
+
             <p className="marketplace-label">
               KRUSHPHAL MARKET
             </p>
 
-            <h1>Vegetable Marketplace</h1>
+            <h1>
+              Vegetable Marketplace
+            </h1>
 
             <p className="marketplace-subtitle">
               Buy fresh vegetables directly from farmers.
             </p>
+
           </div>
+
 
           <button className="sell-btn">
             + Sell Your Crop
@@ -159,44 +184,87 @@ function Marketplace() {
 
         </header>
 
+
         {/* SEARCH & FILTERS */}
 
         <div className="marketplace-toolbar">
 
           <div className="search-box">
+
             <span>🔍</span>
 
             <input
               type="text"
               placeholder="Search vegetables..."
             />
+
           </div>
 
-          <select className="filter-select">
-            <option>All Vegetables</option>
-            <option>Tomato</option>
-            <option>Potato</option>
-            <option>Onion</option>
-          </select>
 
           <select className="filter-select">
-            <option>All Locations</option>
-            <option>Raipur</option>
-            <option>Durg</option>
-            <option>Bilaspur</option>
-            <option>Korba</option>
+
+            <option>
+              All Vegetables
+            </option>
+
+            <option>
+              Tomato
+            </option>
+
+            <option>
+              Potato
+            </option>
+
+            <option>
+              Onion
+            </option>
+
+          </select>
+
+
+          <select className="filter-select">
+
+            <option>
+              All Locations
+            </option>
+
+            <option>
+              Raipur
+            </option>
+
+            <option>
+              Durg
+            </option>
+
+            <option>
+              Bilaspur
+            </option>
+
+            <option>
+              Korba
+            </option>
+
           </select>
 
         </div>
+
 
         {/* MARKET INFO */}
 
         <div className="marketplace-info">
 
           <div>
-            <strong>Today's Vegetable Market</strong>
-            <span> Fresh listings from farmers</span>
+
+            <strong>
+              Today's Vegetable Market
+            </strong>
+
+            <span>
+              {" "}Fresh listings from farmers
+            </span>
+
           </div>
+
 
           <span className="listing-count">
             {products.length} Products Available
@@ -204,11 +272,13 @@ function Marketplace() {
 
         </div>
 
+
         {/* PRODUCT CARDS */}
 
         <div className="product-grid">
 
           {products.map((product) => (
+
             <div
               className="product-card"
               key={product.id}
@@ -227,52 +297,81 @@ function Marketplace() {
 
               </div>
 
+
               <div className="product-content">
 
                 <div className="product-title-row">
 
                   <div>
-                    <h2>{product.crop}</h2>
-                    <p>{product.variety}</p>
+
+                    <h2>
+                      {product.crop}
+                    </h2>
+
+                    <p>
+                      {product.variety}
+                    </p>
+
                   </div>
+
 
                   <div className="price">
 
-                    <strong>{product.price}</strong>
+                    <strong>
+                      {product.price}
+                    </strong>
 
-                    <span>{product.unit}</span>
+                    <span>
+                      {product.unit}
+                    </span>
 
                   </div>
 
                 </div>
+
 
                 <div className="product-details">
 
                   <div>
-                    <span>Quantity</span>
+
+                    <span>
+                      Quantity
+                    </span>
 
                     <strong>
                       {product.quantity}
                     </strong>
+
                   </div>
 
+
                   <div>
-                    <span>Seller</span>
+
+                    <span>
+                      Seller
+                    </span>
 
                     <strong>
                       {product.seller}
                     </strong>
+
                   </div>
 
+
                   <div>
-                    <span>Location</span>
+
+                    <span>
+                      Location
+                    </span>
 
                     <strong>
                       {product.location}
                     </strong>
+
                   </div>
 
                 </div>
+
 
                 <div
                   style={{
@@ -294,6 +393,7 @@ function Marketplace() {
                     View Details →
                   </Link>
 
+
                   <Link
                     to="/cart"
                     className="details-btn"
@@ -310,11 +410,13 @@ function Marketplace() {
               </div>
 
             </div>
+
           ))}
 
         </div>
 
       </main>
+
     </div>
   );
 }

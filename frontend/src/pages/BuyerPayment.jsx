@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./BuyerPayment.css";
 
 function BuyerPayment() {
+  const navigate = useNavigate();
+
   const subtotal = 240;
   const deliveryFee = 40;
   const total = subtotal + deliveryFee;
+
+  const [paymentMethod, setPaymentMethod] = useState("card");
 
   return (
     <div className="buyer-payment-layout">
@@ -91,7 +96,14 @@ function BuyerPayment() {
             </div>
 
             <div className="payment-methods">
-              <button type="button" className="payment-method active">
+              {/* Card */}
+              <button
+                type="button"
+                className={`payment-method ${
+                  paymentMethod === "card" ? "active" : ""
+                }`}
+                onClick={() => setPaymentMethod("card")}
+              >
                 <span>💳</span>
 
                 <div>
@@ -100,7 +112,17 @@ function BuyerPayment() {
                 </div>
               </button>
 
-              <button type="button" className="payment-method">
+              {/* UPI */}
+              <button
+                type="button"
+                className={`payment-method ${
+                  paymentMethod === "upi" ? "active" : ""
+                }`}
+                onClick={() => {
+                  setPaymentMethod("upi");
+                  navigate("/buyer-upi-payment");
+                }}
+              >
                 <span>📱</span>
 
                 <div>
@@ -109,14 +131,21 @@ function BuyerPayment() {
                 </div>
               </button>
 
-              <button type="button" className="payment-method">
+              {/* Cash */}
+              <Link
+                to="/buyer-cash-payment"
+                className={`payment-method ${
+                  paymentMethod === "cash" ? "active" : ""
+                }`}
+                onClick={() => setPaymentMethod("cash")}
+              >
                 <span>💵</span>
 
                 <div>
                   <strong>Cash</strong>
                   <small>Cash on Delivery</small>
                 </div>
-              </button>
+              </Link>
             </div>
 
             <div className="payment-input-group">

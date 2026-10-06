@@ -55,13 +55,11 @@ function Advisory() {
 
       {/* ================= SIDEBAR ================= */}
 
-      <aside className="advisory-sidebar">
-
+      <aside className="dashboard-sidebar">
         <div>
 
-          <div className="advisory-brand">
-
-            <div className="advisory-brand-logo">
+          <div className="dashboard-brand">
+            <div className="dashboard-brand-logo">
               🌿
             </div>
 
@@ -69,15 +67,13 @@ function Advisory() {
               <h2>Krushiphal</h2>
               <p>Smart Farming, Better Future</p>
             </div>
-
           </div>
 
-
-          <nav className="advisory-sidebar-nav">
+          <nav className="dashboard-sidebar-nav">
 
             <Link
               to="/dashboard"
-              className="advisory-nav-link"
+              className="dashboard-nav-link"
             >
               <span>⌂</span>
               Dashboard
@@ -85,7 +81,7 @@ function Advisory() {
 
             <Link
               to="/farm-setup"
-              className="advisory-nav-link"
+              className="dashboard-nav-link"
             >
               <span>🚜</span>
               My Farm
@@ -93,7 +89,7 @@ function Advisory() {
 
             <Link
               to="/my-crops"
-              className="advisory-nav-link"
+              className="dashboard-nav-link"
             >
               <span>🌱</span>
               My Crops
@@ -101,7 +97,7 @@ function Advisory() {
 
             <Link
               to="/marketplace"
-              className="advisory-nav-link"
+              className="dashboard-nav-link"
             >
               <span>🛒</span>
               Marketplace
@@ -109,7 +105,7 @@ function Advisory() {
 
             <Link
               to="/ai-prediction"
-              className="advisory-nav-link"
+              className="dashboard-nav-link"
             >
               <span>🤖</span>
               AI Prediction
@@ -117,7 +113,7 @@ function Advisory() {
 
             <Link
               to="/reports"
-              className="advisory-nav-link"
+              className="dashboard-nav-link"
             >
               <span>▥</span>
               Reports
@@ -125,7 +121,7 @@ function Advisory() {
 
             <Link
               to="/advisory"
-              className="advisory-nav-link active"
+              className="dashboard-nav-link active"
             >
               <span>💡</span>
               Advisory
@@ -133,25 +129,22 @@ function Advisory() {
 
             <Link
               to="/my-profile"
-              className="advisory-nav-link"
+              className="dashboard-nav-link"
             >
               <span>♙</span>
               My Profile
             </Link>
 
           </nav>
-
         </div>
-
 
         <Link
           to="/"
-          className="advisory-logout"
+          className="dashboard-logout"
         >
           <span>↪</span>
           Logout
         </Link>
-
       </aside>
 
 
@@ -348,7 +341,6 @@ function Advisory() {
         {/* ================= FARM CONDITIONS ================= */}
 
         <section className="advisory-bottom-grid">
-
 
           <div className="advisory-card">
 

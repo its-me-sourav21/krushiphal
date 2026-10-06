@@ -1,60 +1,93 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./BuyerNotifications.css";
 
 function BuyerNotifications() {
+  const navigate = useNavigate();
+
   return (
     <div className="buyer-notifications-page">
+
       {/* SIDEBAR */}
-      <aside className="buyer-sidebar">
+      <aside className="dashboard-sidebar">
         <div>
-          <Link to="/buyer-dashboard" className="buyer-brand">
-            <div className="buyer-brand-logo">🌱</div>
+          <Link
+            to="/buyer-dashboard"
+            className="dashboard-brand"
+          >
+            <div className="dashboard-brand-logo">
+              🌾
+            </div>
 
             <div>
-              <h2>KrushiPhal</h2>
-              <p>Fresh from farmers</p>
+              <h2>Krushiphal</h2>
+              <p>Smart Farming, Better Future</p>
             </div>
           </Link>
 
-          <nav className="buyer-nav">
-            <Link to="/buyer-dashboard" className="buyer-nav-link">
-              <span>🏠</span>
+          <nav className="dashboard-sidebar-nav">
+
+            <Link
+              to="/buyer-dashboard"
+              className="dashboard-nav-link"
+            >
+              <span>⌂</span>
               Dashboard
             </Link>
 
-            <Link to="/buyer-marketplace" className="buyer-nav-link">
-              <span>🥕</span>
+            <Link
+              to="/buyer-marketplace"
+              className="dashboard-nav-link"
+            >
+              <span>🥬</span>
               Vegetables
             </Link>
 
-            <Link to="/buyer-cart" className="buyer-nav-link">
+            <Link
+              to="/buyer-cart"
+              className="dashboard-nav-link"
+            >
               <span>🛒</span>
               My Cart
               <b className="nav-badge">2</b>
             </Link>
 
-            <Link to="/buyer-order-tracking" className="buyer-nav-link">
+            <Link
+              to="/buyer-order-tracking"
+              className="dashboard-nav-link"
+            >
               <span>📦</span>
               My Orders
             </Link>
 
             <Link
               to="/buyer-notifications"
-              className="buyer-nav-link active"
+              className="dashboard-nav-link active"
             >
               <span>🔔</span>
               Notifications
               <b className="nav-badge">3</b>
             </Link>
 
-            <Link to="/buyer-my-profile" className="buyer-nav-link">
-              <span>👤</span>
+            <Link
+              to="/buyer-my-profile"
+              className="dashboard-nav-link"
+            >
+              <span>♙</span>
               My Profile
             </Link>
+
           </nav>
         </div>
 
-        <Link to="/" className="buyer-logout">
+        {/* LOGOUT - FIXED */}
+        <Link
+          to="/login"
+          className="dashboard-logout"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/login");
+          }}
+        >
           <span>↪</span>
           Logout
         </Link>
@@ -62,14 +95,19 @@ function BuyerNotifications() {
 
       {/* MAIN */}
       <main className="buyer-main">
+
         {/* HEADER */}
         <header className="buyer-header">
           <div className="buyer-search">
             <span>⌕</span>
-            <input type="text" placeholder="Search vegetables..." />
+            <input
+              type="text"
+              placeholder="Search vegetables..."
+            />
           </div>
 
           <div className="buyer-header-right">
+
             <Link
               to="/buyer-notifications"
               className="buyer-notification"
@@ -79,14 +117,22 @@ function BuyerNotifications() {
               <i></i>
             </Link>
 
-            <Link to="/buyer-cart" className="header-cart">
+            <Link
+              to="/buyer-cart"
+              className="header-cart"
+            >
               🛒
               <span>Cart</span>
               <b>2</b>
             </Link>
 
-            <Link to="/buyer-my-profile" className="buyer-profile">
-              <div className="buyer-avatar">S</div>
+            <Link
+              to="/buyer-my-profile"
+              className="buyer-profile"
+            >
+              <div className="buyer-avatar">
+                S
+              </div>
 
               <div>
                 <strong>Sourav</strong>
@@ -95,6 +141,7 @@ function BuyerNotifications() {
 
               <em>⌄</em>
             </Link>
+
           </div>
         </header>
 
@@ -102,22 +149,34 @@ function BuyerNotifications() {
         <section className="notification-heading">
           <div>
             <span>BUYER ACCOUNT</span>
-            <h1>Notifications</h1>
-            <p>Stay updated with your orders, offers and account activity.</p>
+
+            <h1>
+              Notifications
+            </h1>
+
+            <p>
+              Stay updated with your orders, offers and account activity.
+            </p>
           </div>
 
-          <Link to="/buyer-notifications" className="mark-all-btn">
+          <Link
+            to="/buyer-notifications"
+            className="mark-all-btn"
+          >
             Mark all as read
           </Link>
         </section>
 
         {/* SUMMARY */}
         <section className="notification-summary">
+
           <Link
             to="/buyer-notifications"
             className="notification-summary-card"
           >
-            <div className="summary-icon unread-icon">🔔</div>
+            <div className="summary-icon unread-icon">
+              🔔
+            </div>
 
             <div>
               <span>Unread notifications</span>
@@ -129,7 +188,9 @@ function BuyerNotifications() {
             to="/buyer-order-tracking"
             className="notification-summary-card"
           >
-            <div className="summary-icon order-icon-summary">📦</div>
+            <div className="summary-icon order-icon-summary">
+              📦
+            </div>
 
             <div>
               <span>Order updates</span>
@@ -141,17 +202,21 @@ function BuyerNotifications() {
             to="/buyer-marketplace"
             className="notification-summary-card"
           >
-            <div className="summary-icon offer-icon">🏷️</div>
+            <div className="summary-icon offer-icon">
+              🏷️
+            </div>
 
             <div>
               <span>Offers available</span>
               <strong>4</strong>
             </div>
           </Link>
+
         </section>
 
         {/* NOTIFICATION PANEL */}
         <section className="notification-panel">
+
           <div className="notification-panel-header">
             <div>
               <span>RECENT ACTIVITY</span>
@@ -167,10 +232,16 @@ function BuyerNotifications() {
           </div>
 
           {/* Notification 1 */}
-          <Link to="/buyer-order-tracking" className="notification-item unread">
-            <div className="notification-item-icon green">📦</div>
+          <Link
+            to="/buyer-order-tracking"
+            className="notification-item unread"
+          >
+            <div className="notification-item-icon green">
+              📦
+            </div>
 
             <div className="notification-item-content">
+
               <div className="notification-title-row">
                 <h3>Order confirmed</h3>
                 <span>10 min ago</span>
@@ -181,17 +252,26 @@ function BuyerNotifications() {
                 being prepared by the farmer.
               </p>
 
-              <span className="notification-link">View order →</span>
+              <span className="notification-link">
+                View order →
+              </span>
+
             </div>
 
             <div className="unread-dot"></div>
           </Link>
 
           {/* Notification 2 */}
-          <Link to="/buyer-order-tracking" className="notification-item unread">
-            <div className="notification-item-icon blue">🚚</div>
+          <Link
+            to="/buyer-order-tracking"
+            className="notification-item unread"
+          >
+            <div className="notification-item-icon blue">
+              🚚
+            </div>
 
             <div className="notification-item-content">
+
               <div className="notification-title-row">
                 <h3>Order is out for delivery</h3>
                 <span>1 hour ago</span>
@@ -202,17 +282,26 @@ function BuyerNotifications() {
                 address soon.
               </p>
 
-              <span className="notification-link">Track order →</span>
+              <span className="notification-link">
+                Track order →
+              </span>
+
             </div>
 
             <div className="unread-dot"></div>
           </Link>
 
           {/* Notification 3 */}
-          <Link to="/buyer-marketplace" className="notification-item unread">
-            <div className="notification-item-icon orange">🏷️</div>
+          <Link
+            to="/buyer-marketplace"
+            className="notification-item unread"
+          >
+            <div className="notification-item-icon orange">
+              🏷️
+            </div>
 
             <div className="notification-item-content">
+
               <div className="notification-title-row">
                 <h3>Special offer available</h3>
                 <span>3 hours ago</span>
@@ -223,17 +312,26 @@ function BuyerNotifications() {
                 for buyers today.
               </p>
 
-              <span className="notification-link">Shop now →</span>
+              <span className="notification-link">
+                Shop now →
+              </span>
+
             </div>
 
             <div className="unread-dot"></div>
           </Link>
 
           {/* Notification 4 */}
-          <Link to="/buyer-order-tracking" className="notification-item">
-            <div className="notification-item-icon purple">💳</div>
+          <Link
+            to="/buyer-order-tracking"
+            className="notification-item"
+          >
+            <div className="notification-item-icon purple">
+              💳
+            </div>
 
             <div className="notification-item-content">
+
               <div className="notification-title-row">
                 <h3>Payment received</h3>
                 <span>Yesterday</span>
@@ -244,15 +342,24 @@ function BuyerNotifications() {
                 received.
               </p>
 
-              <span className="notification-link">View order →</span>
+              <span className="notification-link">
+                View order →
+              </span>
+
             </div>
           </Link>
 
           {/* Notification 5 */}
-          <Link to="/buyer-marketplace" className="notification-item">
-            <div className="notification-item-icon red">❤️</div>
+          <Link
+            to="/buyer-marketplace"
+            className="notification-item"
+          >
+            <div className="notification-item-icon red">
+              ❤️
+            </div>
 
             <div className="notification-item-content">
+
               <div className="notification-title-row">
                 <h3>New vegetables added</h3>
                 <span>Yesterday</span>
@@ -263,14 +370,19 @@ function BuyerNotifications() {
                 marketplace.
               </p>
 
-              <span className="notification-link">Explore vegetables →</span>
+              <span className="notification-link">
+                Explore vegetables →
+              </span>
+
             </div>
           </Link>
+
         </section>
 
         <footer className="buyer-footer">
           © 2026 KrushiPhal · Fresh from farmers to your home
         </footer>
+
       </main>
     </div>
   );

@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./BuyerMarketplace.css";
 
 function BuyerMarketplace() {
+  const navigate = useNavigate();
+
   const products = [
     {
       id: 1,
@@ -133,8 +135,12 @@ function BuyerMarketplace() {
         </div>
 
         <Link
-          to="/"
+          to="/login"
           className="dashboard-logout"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/login");
+          }}
         >
           <span>↪</span>
           Logout
