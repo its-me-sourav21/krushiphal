@@ -45,97 +45,64 @@ function Profile() {
 
       {/* ================= SIDEBAR ================= */}
 
-      <aside className="profile-sidebar">
-
+      <aside className="dashboard-sidebar">
         <div>
 
-          <div className="profile-sidebar-brand">
-
-            <div className="profile-brand-logo">
-              🌿
-            </div>
+          <div className="dashboard-brand">
+            <div className="dashboard-brand-logo">🌿</div>
 
             <div>
               <h2>Krushiphal</h2>
-              <span>Smart Farming, Better Future</span>
+              <p>Smart Farming, Better Future</p>
             </div>
-
           </div>
 
-          <nav className="profile-sidebar-nav">
+          <nav className="dashboard-sidebar-nav">
 
-            <Link
-              to="/dashboard"
-              className="profile-nav-item"
-            >
+            <Link to="/dashboard" className="dashboard-nav-link">
               <span>⌂</span>
               Dashboard
             </Link>
 
-            <Link
-              to="/farm-setup"
-              className="profile-nav-item"
-            >
+            <Link to="/farm-setup" className="dashboard-nav-link">
               <span>🚜</span>
               My Farm
             </Link>
 
-            <Link
-              to="/my-crops"
-              className="profile-nav-item"
-            >
+            <Link to="/my-crops" className="dashboard-nav-link">
               <span>🌱</span>
               My Crops
             </Link>
 
-            <Link
-              to="/marketplace"
-              className="profile-nav-item"
-            >
+            <Link to="/marketplace" className="dashboard-nav-link">
               <span>🛒</span>
               Marketplace
             </Link>
 
-            <Link
-              to="/ai-prediction"
-              className="profile-nav-item"
-            >
+            <Link to="/ai-prediction" className="dashboard-nav-link">
               <span>🤖</span>
               AI Prediction
             </Link>
 
-            <Link
-              to="/reports"
-              className="profile-nav-item"
-            >
+            <Link to="/reports" className="dashboard-nav-link">
               <span>▥</span>
               Reports
             </Link>
 
-            <Link
-              to="/advisory"
-              className="profile-nav-item"
-            >
+            <Link to="/advisory" className="dashboard-nav-link">
               <span>💡</span>
               Advisory
             </Link>
 
-            <Link
-              to="/my-profile"
-              className="profile-nav-item active"
-            >
+            <Link to="/my-profile" className="dashboard-nav-link active">
               <span>♙</span>
               My Profile
             </Link>
 
           </nav>
-
         </div>
 
-        <Link
-          to="/"
-          className="profile-logout"
-        >
+        <Link to="/" className="dashboard-logout">
           <span>↪</span>
           Logout
         </Link>
